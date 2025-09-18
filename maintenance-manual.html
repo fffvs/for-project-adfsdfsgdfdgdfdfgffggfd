@@ -1,0 +1,1368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>RBMK Maintenance and Testing Procedures Manual - Wikipedia</title>
+    <style>
+        body {
+            font-family: 'Linux Libertine', 'Georgia', serif;
+            background: #f8f9fa;
+            color: #202122;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 40px auto;
+            background: #fff;
+            border: 1px solid #a2a9b1;
+            padding: 32px;
+            box-shadow: 0 0 10px #ccc;
+        }
+        h1 {
+            font-size: 2.2em;
+            border-bottom: 1px solid #a2a9b1;
+            margin-bottom: 0.5em;
+        }
+        h2 {
+            font-size: 1.5em;
+            border-bottom: 1px solid #a2a9b1;
+            margin-top: 2em;
+            margin-bottom: 0.5em;
+        }
+        h3 {
+            font-size: 1.2em;
+            margin-top: 1.5em;
+            margin-bottom: 0.5em;
+        }
+        h4 {
+            font-size: 1.1em;
+            margin-top: 1em;
+            margin-bottom: 0.5em;
+            font-weight: bold;
+        }
+        .infobox {
+            float: right;
+            width: 300px;
+            margin: 0 0 1em 2em;
+            background: #f8f9fa;
+            border: 1px solid #a2a9b1;
+            padding: 8px;
+            font-size: 0.95em;
+        }
+        .infobox th {
+            background: #eaecf0;
+            padding: 4px;
+            text-align: left;
+        }
+        .infobox td {
+            padding: 4px;
+        }
+        .wikitable {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 1em 0;
+        }
+        .wikitable th, .wikitable td {
+            border: 1px solid #a2a9b1;
+            padding: 6px;
+            text-align: left;
+        }
+        .wikitable th {
+            background: #eaecf0;
+            text-align: center;
+        }
+        .wikitable td.center {
+            text-align: center;
+        }
+        .thumb {
+            margin: 1em 0;
+            text-align: center;
+        }
+        .thumb img {
+            max-width: 100%;
+            border: 1px solid #a2a9b1;
+            background: #fff;
+            cursor: pointer;
+        }
+        .thumbcaption {
+            font-size: 0.95em;
+            color: #555;
+            margin-top: 0.2em;
+        }
+        ul {
+            margin: 0.5em 0 0.5em 1.5em;
+        }
+        ol {
+            margin: 0.5em 0 0.5em 1.5em;
+        }
+        a {
+            color: #0645ad;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .clear {
+            clear: both;
+        }
+        .warning-box {
+            background: #fff8dc;
+            border: 2px solid #ff9800;
+            padding: 10px;
+            margin: 1em 0;
+            border-radius: 5px;
+        }
+        .danger-box {
+            background: #ffe4e1;
+            border: 2px solid #ff0000;
+            padding: 10px;
+            margin: 1em 0;
+            border-radius: 5px;
+        }
+        .info-box {
+            background: #e8f4ff;
+            border: 2px solid #0066cc;
+            padding: 10px;
+            margin: 1em 0;
+            border-radius: 5px;
+        }
+        .panel-diagram {
+            background: #f0f0f0;
+            border: 1px solid #ccc;
+            padding: 15px;
+            margin: 1em 0;
+            font-family: 'Courier New', monospace;
+            white-space: pre;
+            overflow-x: auto;
+            font-size: 0.9em;
+        }
+        .code-block {
+            background: #f8f8f8;
+            border: 1px solid #ddd;
+            padding: 10px;
+            margin: 1em 0;
+            font-family: 'Courier New', monospace;
+            font-size: 0.95em;
+        }
+        .procedure-box {
+            background: #f0f8ff;
+            border-left: 4px solid #0066cc;
+            padding: 10px;
+            margin: 1em 0;
+        }
+        .toc {
+            background: #f8f9fa;
+            border: 1px solid #a2a9b1;
+            padding: 10px;
+            display: inline-block;
+            margin: 1em 0;
+        }
+        .toc-title {
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 0.5em;
+        }
+        .toc ul {
+            margin: 0.2em 0 0.2em 1em;
+        }
+        .toc li {
+            margin: 0.2em 0;
+        }
+        .checklist {
+            background: #f0f8f0;
+            border: 1px solid #90ee90;
+            padding: 10px;
+            margin: 1em 0;
+        }
+        .checklist input[type="checkbox"] {
+            margin-right: 8px;
+        }
+        .maintenance-tag {
+            display: inline-block;
+            padding: 2px 8px;
+            border-radius: 3px;
+            font-size: 0.85em;
+            margin: 0 2px;
+        }
+        .tag-critical {
+            background: #ff6b6b;
+            color: white;
+        }
+        .tag-routine {
+            background: #4ecdc4;
+            color: white;
+        }
+        .tag-safety {
+            background: #ff9800;
+            color: white;
+        }
+        .tag-inspection {
+            background: #9b59b6;
+            color: white;
+        }
+
+        /* Lightbox styles */
+        .lightbox-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 10000;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s;
+        }
+        .lightbox-overlay.show {
+            opacity: 1;
+            pointer-events: auto;
+        }
+        .lightbox-content {
+            position: relative;
+            max-width: 90%;
+            max-height: 90%;
+        }
+        .lightbox-content img {
+            max-width: 100%;
+            max-height: 80vh;
+            display: block;
+            margin: 0 auto;
+        }
+        .lightbox-close {
+            position: absolute;
+            top: -40px;
+            right: 0;
+            color: white;
+            font-size: 2em;
+            font-weight: bold;
+            cursor: pointer;
+            background: #444;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            line-height: 40px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>RBMK Maintenance and Testing Procedures Manual</h1>
+    
+    <table class="infobox">
+        <tr>
+            <th colspan="2" style="text-align:center;">RBMK Maintenance Program</th>
+        </tr>
+        <tr>
+            <td colspan="2" style="text-align:center;">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/RIAN_archive_305016_Maintenance_staff_at_work.jpg/320px-RIAN_archive_305016_Maintenance_staff_at_work.jpg" alt="RBMK Maintenance" style="width:100%;max-width:280px;" class="lightbox">
+                <div class="thumbcaption">Maintenance personnel working on RBMK reactor components</div>
+            </td>
+        </tr>
+        <tr>
+            <th>Refueling Interval</th>
+            <td>Continuous (online)</td>
+        </tr>
+        <tr>
+            <th>Major Overhaul</th>
+            <td>Every 3-4 years</td>
+        </tr>
+        <tr>
+            <th>Channel Replacement</th>
+            <td>15-20 years</td>
+        </tr>
+        <tr>
+            <th>Control Rod Service</th>
+            <td>Annual inspection</td>
+        </tr>
+        <tr>
+            <th>SKALA Calibration</th>
+            <td>Monthly</td>
+        </tr>
+        <tr>
+            <th>ECCS Testing</th>
+            <td>Quarterly</td>
+        </tr>
+        <tr>
+            <th>Maintenance Staff</th>
+            <td>~300 personnel</td>
+        </tr>
+        <tr>
+            <th>Radiation Exposure</th>
+            <td><20 mSv/year limit</td>
+        </tr>
+    </table>
+
+    <p>The <strong>RBMK Maintenance and Testing Procedures Manual</strong> provides comprehensive guidelines for the preventive and corrective maintenance of RBMK-1000 reactor systems. This manual covers all aspects of maintenance operations, from routine inspections to major component replacements, ensuring safe and reliable reactor operation while minimizing personnel radiation exposure.</p>
+
+    <div class="danger-box">
+        <strong>⚠️ RADIATION HAZARD WARNING:</strong> All maintenance activities must be performed in accordance with ALARA (As Low As Reasonably Achievable) principles. Personnel must be properly trained, equipped with appropriate dosimetry, and follow all radiation protection procedures. Never enter high radiation areas without proper authorization and protective equipment.
+    </div>
+
+    <div class="toc">
+        <div class="toc-title">Contents</div>
+        <ul>
+            <li>1. Preventive Maintenance Program</li>
+            <li>2. Control Rod Drive Maintenance</li>
+            <li>3. Fuel Channel Service</li>
+            <li>4. Graphite Stack Monitoring</li>
+            <li>5. Primary Circuit Maintenance</li>
+            <li>6. Instrumentation Calibration</li>
+            <li>7. Safety System Testing</li>
+            <li>8. Refueling Operations</li>
+            <li>9. In-Service Inspection</li>
+            <li>10. Radiation Protection</li>
+        </ul>
+    </div>
+
+    <div class="clear"></div>
+
+    <h2>1. Preventive Maintenance Program</h2>
+
+    <h3>1.1 Maintenance Philosophy</h3>
+
+    <p>The RBMK maintenance program is based on a combination of:</p>
+    <ul>
+        <li><strong>Time-Based Maintenance (TBM):</strong> Scheduled at fixed intervals</li>
+        <li><strong>Condition-Based Maintenance (CBM):</strong> Based on equipment condition monitoring</li>
+        <li><strong>Predictive Maintenance (PdM):</strong> Using trend analysis and diagnostics</li>
+        <li><strong>Corrective Maintenance:</strong> Repairs after failure detection</li>
+        <li><strong>Online Maintenance:</strong> <cite index="1-2">Fuel assemblies can be lifted into and out of the reactor, allowing fuel replenishment while the reactor is in operation</cite></li>
+    </ul>
+
+    <h3>1.2 Maintenance Schedule Overview</h3>
+
+    <table class="wikitable">
+        <tr>
+            <th>Frequency</th>
+            <th>System/Component</th>
+            <th>Activity</th>
+            <th>Duration</th>
+            <th>Power Level</th>
+        </tr>
+        <tr>
+            <td><strong>Daily</strong></td>
+            <td>Control rods</td>
+            <td>Movement verification</td>
+            <td>15 min</td>
+            <td>100%</td>
+        </tr>
+        <tr>
+            <td><strong>Weekly</strong></td>
+            <td>MCP seals</td>
+            <td>Leak inspection</td>
+            <td>2 hours</td>
+            <td>100%</td>
+        </tr>
+        <tr>
+            <td><strong>Monthly</strong></td>
+            <td>SKALA system</td>
+            <td>Calibration check</td>
+            <td>8 hours</td>
+            <td>100%</td>
+        </tr>
+        <tr>
+            <td><strong>Quarterly</strong></td>
+            <td>ECCS</td>
+            <td>Function test</td>
+            <td>24 hours</td>
+            <td>50-100%</td>
+        </tr>
+        <tr>
+            <td><strong>Semi-Annual</strong></td>
+            <td>Safety valves</td>
+            <td>Set point verification</td>
+            <td>48 hours</td>
+            <td>Shutdown</td>
+        </tr>
+        <tr>
+            <td><strong>Annual</strong></td>
+            <td>Control rod drives</td>
+            <td>Complete inspection</td>
+            <td>2 weeks</td>
+            <td>Shutdown</td>
+        </tr>
+        <tr>
+            <td><strong>3-4 Years</strong></td>
+            <td>Major overhaul</td>
+            <td>Component replacement</td>
+            <td>45-60 days</td>
+            <td>Shutdown</td>
+        </tr>
+        <tr>
+            <td><strong>15-20 Years</strong></td>
+            <td>Fuel channels</td>
+            <td><cite index="1-28,1-29">Replacement of the fuel channels at all units. Replacement of the group distribution headers and addition of check valves</cite></td>
+            <td>6 months</td>
+            <td>Shutdown</td>
+        </tr>
+    </table>
+
+    <h3>1.3 Work Order System</h3>
+
+    <h4>Work Order Categories</h4>
+    <ul>
+        <li><span class="maintenance-tag tag-critical">CRITICAL</span> Emergency repairs - immediate action required</li>
+        <li><span class="maintenance-tag tag-safety">SAFETY</span> Safety system maintenance - high priority</li>
+        <li><span class="maintenance-tag tag-routine">ROUTINE</span> Scheduled preventive maintenance</li>
+        <li><span class="maintenance-tag tag-inspection">INSPECTION</span> Surveillance and testing</li>
+    </ul>
+
+    <h2>2. Control Rod Drive Maintenance</h2>
+
+    <h3>2.1 Drive Mechanism Components</h3>
+
+    <p><cite index="12-13">Controlling the RBMK was a very laborious, mentally and physically demanding task requiring the timely adjustment of dozens of parameters every minute, around the clock, constantly wearing out switches such as those used for the control rods</cite></p>
+
+    <h4>Major Components Requiring Maintenance</h4>
+    <ul>
+        <li><strong>Servo Motors:</strong> 2.2 kW three-phase asynchronous motors</li>
+        <li><strong>Gear Reducers:</strong> 1:9800 ratio planetary gearbox</li>
+        <li><strong>Position Indicators:</strong> Synchro transmitters and resolvers</li>
+        <li><strong>Clutch Assemblies:</strong> Electromagnetic clutches with manual release</li>
+        <li><strong>Cooling System:</strong> Water-cooled bearing assemblies</li>
+        <li><strong>Sealing System:</strong> Multiple seal stages to prevent leakage</li>
+    </ul>
+
+    <h3>2.2 Annual Control Rod Drive Inspection</h3>
+
+    <div class="procedure-box">
+        <strong>📋 CONTROL ROD DRIVE ANNUAL MAINTENANCE PROCEDURE</strong>
+    </div>
+
+    <ol>
+        <li><strong>Pre-Maintenance Requirements</strong>
+            <ul>
+                <li>Reactor shutdown and cooled to <100°C</li>
+                <li>Control rod fully inserted and locked</li>
+                <li>Drive power isolated and tagged</li>
+                <li>Area radiation survey completed</li>
+            </ul>
+        </li>
+        
+        <li><strong>Drive Motor Inspection</strong>
+            <ul>
+                <li>Check motor winding resistance (should be 12-15 Ω per phase)</li>
+                <li>Measure insulation resistance (>10 MΩ)</li>
+                <li>Inspect motor bearings for wear</li>
+                <li>Replace motor brushes if worn >50%</li>
+                <li>Verify motor cooling fan operation</li>
+            </ul>
+        </li>
+        
+        <li><strong>Gear Reducer Service</strong>
+            <ul>
+                <li>Drain and replace gear oil (ISO VG 220)</li>
+                <li>Check gear backlash (<0.5mm)</li>
+                <li>Inspect gear teeth for pitting or wear</li>
+                <li>Replace oil seals if leaking</li>
+                <li>Torque all mounting bolts to specification</li>
+            </ul>
+        </li>
+        
+        <li><strong>Position Indicator Calibration</strong>
+            <ul>
+                <li>Zero position verification at full insertion</li>
+                <li>Check linearity over full travel range</li>
+                <li>Calibrate at 0, 175, 350, 525, and 700 cm</li>
+                <li>Verify position accuracy ±2 cm</li>
+                <li>Test position transmitter signals</li>
+            </ul>
+        </li>
+        
+        <li><strong>Clutch System Maintenance</strong>
+            <ul>
+                <li>Test electromagnetic clutch engagement/release</li>
+                <li>Measure clutch air gap (2-3 mm)</li>
+                <li>Check manual release mechanism</li>
+                <li>Verify clutch holding torque >150 Nm</li>
+                <li>Replace clutch plates if worn</li>
+            </ul>
+        </li>
+    </ol>
+
+    <h3>2.3 Control Rod Replacement</h3>
+
+    <div class="warning-box">
+        <strong>⚠️ CAUTION:</strong> Control rod replacement is a high-radiation task. Typical dose rates near withdrawn control rods can exceed 100 mSv/hr. Use remote handling tools whenever possible.
+    </div>
+
+    <h4>Replacement Criteria</h4>
+    <ul>
+        <li>Boron depletion >30% (determined by reactivity worth testing)</li>
+        <li>Mechanical damage to absorber or follower sections</li>
+        <li>Excessive bow or deformation (>10mm over length)</li>
+        <li>Failed position indication</li>
+        <li><cite index="14-27,14-28,14-29">One of the most important post-accident changes to the RBMK was the retrofitting of the control rods. A graphite 'displacer' is attached to each end of the length of absorber of each rod. The manual control rods were replaced by rods of an improved design</cite></li>
+    </ul>
+
+    <h2>3. Fuel Channel Service</h2>
+
+    <h3>3.1 Channel Components</h3>
+
+    <p><cite index="7-1,7-2,7-3">Design and main technological features to fabricate fuel channel components (steel-zirconium and zirconium-zirconium welded joints) are described. Fuel channel fracture resistance characteristics (critical crack sizes at failure and start of hydrogen-induced delayed cracking) are presented. Measures on enhancing quality and improving quality control over fuel channel zirconium tubes taken to increase fuel channel lifetime are outlined</cite></p>
+
+    <div class="panel-diagram">
+FUEL CHANNEL CROSS-SECTION:
+
+             Graphite Stack
+        ╔════════════════════╗
+        ║  ┌──────────────┐  ║
+        ║  │              │  ║
+        ║  │  Zr-Nb Tube  │  ║ ← Pressure boundary
+        ║  │   ID: 80mm   │  ║   Material: Zr-2.5%Nb
+        ║  │   OD: 88mm   │  ║   Design pressure: 10 MPa
+        ║  │              │  ║
+        ║  │ ┌──────────┐ │  ║
+        ║  │ │          │ │  ║
+        ║  │ │   Fuel   │ │  ║ ← Two fuel assemblies
+        ║  │ │ Assembly │ │  ║   3.65m each
+        ║  │ │          │ │  ║
+        ║  │ └──────────┘ │  ║
+        ║  │              │  ║
+        ║  └──────────────┘  ║
+        ║    Gas Gap (He/N₂)  ║ ← Prevents graphite oxidation
+        ╚════════════════════╝
+    </div>
+
+    <h3>3.2 Channel Inspection Program</h3>
+
+    <h4>Non-Destructive Examination (NDE) Methods</h4>
+
+    <table class="wikitable">
+        <tr>
+            <th>Method</th>
+            <th>Purpose</th>
+            <th>Frequency</th>
+            <th>Acceptance Criteria</th>
+        </tr>
+        <tr>
+            <td><strong>Eddy Current</strong></td>
+            <td>Detect cracks and wall thinning</td>
+            <td>Every 3 years</td>
+            <td>No cracks >2mm depth</td>
+        </tr>
+        <tr>
+            <td><strong>Ultrasonic</strong></td>
+            <td>Measure wall thickness</td>
+            <td>Every 3 years</td>
+            <td>Wall thickness >3.5mm</td>
+        </tr>
+        <tr>
+            <td><strong>Visual (Borescope)</strong></td>
+            <td>Surface condition</td>
+            <td>During refueling</td>
+            <td>No visible damage</td>
+        </tr>
+        <tr>
+            <td><strong>Dimensional</strong></td>
+            <td>Channel elongation/sag</td>
+            <td>Annual sample</td>
+            <td>Elongation <100mm</td>
+        </tr>
+        <tr>
+            <td><strong>Pressure Test</strong></td>
+            <td>Leak tightness</td>
+            <td>After repairs</td>
+            <td>No pressure drop</td>
+        </tr>
+    </table>
+
+    <h3>3.3 Channel Replacement Procedure</h3>
+
+    <div class="checklist">
+        <strong>✓ FUEL CHANNEL REPLACEMENT CHECKLIST</strong><br><br>
+        <input type="checkbox"> Reactor defueled in affected zone<br>
+        <input type="checkbox"> Graphite temperature <150°C<br>
+        <input type="checkbox"> Channel isolation valves closed<br>
+        <input type="checkbox"> Channel depressurized and drained<br>
+        <input type="checkbox"> Upper biological shield blocks removed<br>
+        <input type="checkbox"> Channel cutting equipment positioned<br>
+        <input type="checkbox"> Old channel extracted using special tooling<br>
+        <input type="checkbox"> Channel bore inspected and cleaned<br>
+        <input type="checkbox"> New channel inserted and aligned<br>
+        <input type="checkbox"> End fittings welded (X-ray inspection required)<br>
+        <input type="checkbox"> Pressure test at 1.5 × design pressure<br>
+        <input type="checkbox"> Channel commissioned and returned to service<br>
+    </div>
+
+    <h2>4. Graphite Stack Monitoring</h2>
+
+    <h3>4.1 Graphite Degradation Mechanisms</h3>
+
+    <p><cite index="5-32">The maximum allowed temperature of the graphite is up to 730 °C</cite>. The graphite moderator undergoes several degradation processes:</p>
+
+    <ul>
+        <li><strong>Radiolytic Oxidation:</strong> Reaction with residual moisture and oxygen</li>
+        <li><strong>Dimensional Changes:</strong> Neutron-induced swelling and shrinkage</li>
+        <li><strong>Stored Energy:</strong> Wigner energy accumulation in crystal lattice</li>
+        <li><strong>Thermal Stress:</strong> Cracking from temperature gradients</li>
+        <li><strong>Mechanical Wear:</strong> From fuel channel movement and vibration</li>
+    </ul>
+
+    <h3>4.2 Monitoring Program</h3>
+
+    <h4>Temperature Monitoring</h4>
+    <div class="info-box">
+        <strong>ℹ️ Graphite Stack Temperature Limits</strong><br>
+        • Normal operation: 450-650°C<br>
+        • Alarm setpoint: 700°C<br>
+        • Maximum allowable: 730°C<br>
+        • Annealing temperature: >250°C (for Wigner release)
+    </div>
+
+    <h4>Graphite Sampling Program</h4>
+    <table class="wikitable">
+        <tr>
+            <th>Parameter</th>
+            <th>Measurement Method</th>
+            <th>Frequency</th>
+            <th>Action Level</th>
+        </tr>
+        <tr>
+            <td>Oxidation Rate</td>
+            <td>Weight loss analysis</td>
+            <td>Annual</td>
+            <td>>1% per year</td>
+        </tr>
+        <tr>
+            <td>Dimensional Change</td>
+            <td>Bore diameter gauging</td>
+            <td>3 years</td>
+            <td>>5mm increase</td>
+        </tr>
+        <tr>
+            <td>Stored Energy</td>
+            <td>Differential scanning calorimetry</td>
+            <td>5 years</td>
+            <td>>200 cal/g</td>
+        </tr>
+        <tr>
+            <td>Mechanical Properties</td>
+            <td>Young's modulus testing</td>
+            <td>5 years</td>
+            <td><8 GPa</td>
+        </tr>
+        <tr>
+            <td>Gas Composition</td>
+            <td>Mass spectrometry</td>
+            <td>Monthly</td>
+            <td>O₂ >100 ppm</td>
+        </tr>
+    </table>
+
+    <h2>5. Primary Circuit Maintenance</h2>
+
+    <h3>5.1 Main Circulation Pump (MCP) Maintenance</h3>
+
+    <p>The RBMK employs 8 MCPs (6 operating + 2 standby) with the following specifications:</p>
+
+    <h4>MCP Technical Data</h4>
+    <ul>
+        <li><strong>Type:</strong> Vertical centrifugal, single-stage</li>
+        <li><strong>Flow Rate:</strong> 8,000 m³/hr per pump</li>
+        <li><strong>Head:</strong> 200 m H₂O</li>
+        <li><strong>Motor Power:</strong> 5.6 MW</li>
+        <li><strong>Speed:</strong> 1,000 RPM</li>
+        <li><strong>Seal Type:</strong> Mechanical, water-cooled</li>
+    </ul>
+
+    <h3>5.2 MCP Seal Maintenance</h3>
+
+    <div class="procedure-box">
+        <strong>📋 MCP SEAL REPLACEMENT PROCEDURE</strong>
+    </div>
+
+    <ol>
+        <li><strong>Preparation Phase</strong>
+            <ul>
+                <li>Reduce reactor power to allow pump isolation</li>
+                <li>Start standby pump and verify flow</li>
+                <li>Close suction and discharge valves</li>
+                <li>Depressurize and drain pump casing</li>
+                <li>Establish seal cooling water flow</li>
+            </ul>
+        </li>
+        
+        <li><strong>Seal Removal</strong>
+            <ul>
+                <li>Remove seal housing cover bolts</li>
+                <li>Extract seal cartridge assembly</li>
+                <li>Inspect shaft sleeve for scoring (Ra <0.4 μm)</li>
+                <li>Clean seal chamber and inspect for damage</li>
+            </ul>
+        </li>
+        
+        <li><strong>Seal Installation</strong>
+            <ul>
+                <li>Install new seal cartridge (do not touch seal faces)</li>
+                <li>Verify seal spring compression (25-30mm)</li>
+                <li>Install seal housing with new gasket</li>
+                <li>Torque bolts to 450 Nm in star pattern</li>
+            </ul>
+        </li>
+        
+        <li><strong>Testing and Return to Service</strong>
+            <ul>
+                <li>Perform static pressure test at 8.5 MPa</li>
+                <li>Check seal leakage (<10 L/hr)</li>
+                <li>Run pump at minimum speed for 2 hours</li>
+                <li>Monitor seal temperatures (<65°C)</li>
+                <li>Gradually increase to normal operating speed</li>
+            </ul>
+        </li>
+    </ol>
+
+    <h3>5.3 Steam Separator Drum Maintenance</h3>
+
+    <h4>Internal Components Inspection</h4>
+    <ul>
+        <li><strong>Cyclone Separators:</strong> Check for erosion and blockage</li>
+        <li><strong>Dryer Elements:</strong> Inspect chevron vanes for damage</li>
+        <li><strong>Feed Ring:</strong> Verify spray nozzle condition</li>
+        <li><strong>Level Instrumentation:</strong> Calibrate differential pressure cells</li>
+        <li><strong>Safety Valves:</strong> Test and certify set points</li>
+    </ul>
+
+    <h2>6. Instrumentation Calibration</h2>
+
+    <h3>6.1 Nuclear Instrumentation Calibration</h3>
+
+    <table class="wikitable">
+        <tr>
+            <th>Instrument Type</th>
+            <th>Calibration Method</th>
+            <th>Frequency</th>
+            <th>Acceptance Criteria</th>
+        </tr>
+        <tr>
+            <td><strong>Source Range</strong></td>
+            <td>Neutron source check</td>
+            <td>Prior to startup</td>
+            <td>±10% of known source</td>
+        </tr>
+        <tr>
+            <td><strong>Intermediate Range</strong></td>
+            <td>Overlap verification</td>
+            <td>Monthly</td>
+            <td>1.5 decade overlap</td>
+        </tr>
+        <tr>
+            <td><strong>Power Range</strong></td>
+            <td>Heat balance calibration</td>
+            <td>Weekly at power</td>
+            <td>±2% of thermal power</td>
+        </tr>
+        <tr>
+            <td><strong>In-Core Detectors</strong></td>
+            <td>Traverse comparison</td>
+            <td>Quarterly</td>
+            <td>±5% of reference</td>
+        </tr>
+        <tr>
+            <td><strong>Period Meters</strong></td>
+            <td>Electronic simulation</td>
+            <td>Semi-annual</td>
+            <td>±0.5 sec at 30 sec period</td>
+        </tr>
+    </table>
+
+    <h3>6.2 Process Instrumentation Calibration</h3>
+
+    <div class="panel-diagram">
+TYPICAL CALIBRATION SETUP:
+
+    Process Transmitter          Calibration Equipment
+    ┌─────────────┐            ┌──────────────────┐
+    │  Pressure   │◄───────────┤  Dead Weight     │
+    │ Transmitter │            │     Tester       │
+    │  0-10 MPa   │            │  Accuracy: 0.05% │
+    └──────┬──────┘            └──────────────────┘
+           │
+           │ 4-20 mA
+           ▼
+    ┌─────────────┐            ┌──────────────────┐
+    │   SKALA     │◄───────────┤   Calibrator     │
+    │   Input     │            │  Fluke 754      │
+    │   Module    │            │  Accuracy: 0.01% │
+    └─────────────┘            └──────────────────┘
+
+Calibration Points: 0%, 25%, 50%, 75%, 100% of range
+Acceptance: ±0.5% of span
+    </div>
+
+    <h2>7. Safety System Testing</h2>
+
+    <h3>7.1 Emergency Core Cooling System (ECCS) Testing</h3>
+
+    <p><cite index="1-30">Improvements to the emergency core cooling systems</cite> require regular testing to ensure reliability.</p>
+
+    <h4>ECCS Quarterly Surveillance Test</h4>
+
+    <div class="danger-box">
+        <strong>⚠️ WARNING:</strong> ECCS testing may cause reactor power transients. Ensure reactor engineering approval before testing.
+    </div>
+
+    <table class="wikitable">
+        <tr>
+            <th>Test Component</th>
+            <th>Test Method</th>
+            <th>Acceptance Criteria</th>
+            <th>LCO Action</th>
+        </tr>
+        <tr>
+            <td><strong>ECCS Pumps</strong></td>
+            <td>Start and run for 15 min</td>
+            <td>Flow >1100 m³/hr @ 8.5 MPa</td>
+            <td>Repair within 72 hrs</td>
+        </tr>
+        <tr>
+            <td><strong>Check Valves</strong></td>
+            <td>Reverse flow test</td>
+            <td>Leakage <10 L/hr</td>
+            <td>Repair next outage</td>
+        </tr>
+        <tr>
+            <td><strong>Accumulators</strong></td>
+            <td>Pressure/level check</td>
+            <td>6.0 MPa, 80% level</td>
+            <td>Restore within 1 hr</td>
+        </tr>
+        <tr>
+            <td><strong>Actuation Logic</strong></td>
+            <td>Simulated signals</td>
+            <td>Response <2 seconds</td>
+            <td>Repair within 24 hrs</td>
+        </tr>
+        <tr>
+            <td><strong>Flow Path</strong></td>
+            <td>Valve lineup verification</td>
+            <td>All valves in position</td>
+            <td>Immediate correction</td>
+        </tr>
+    </table>
+
+    <h3>7.2 Reactor Protection System Testing</h3>
+
+    <h4>AZ-5 System Monthly Test</h4>
+
+    <ol>
+        <li><strong>Pre-Test Conditions</strong>
+            <ul>
+                <li>Reactor power <20% or shutdown</li>
+                <li>All control rods operable</li>
+                <li>SKALA system operational</li>
+                <li>Test mode selected on protection panel</li>
+            </ul>
+        </li>
+        
+        <li><strong>Response Time Testing</strong>
+            <ul>
+                <li>Initiate AZ-5 signal from each actuation source</li>
+                <li><cite index="14-25">Scram (shut down) rod insertion time cut from 18 to 12 seconds</cite></li>
+                <li>Verify all rods begin movement within 1 second</li>
+                <li>Confirm 90% insertion within 12 seconds</li>
+                <li>Record individual rod insertion times</li>
+            </ul>
+        </li>
+        
+        <li><strong>Logic Testing</strong>
+            <ul>
+                <li>Test 2-out-of-3 voting logic</li>
+                <li>Verify bypass capabilities</li>
+                <li>Check permissive interlocks</li>
+                <li>Test manual initiation from all locations</li>
+            </ul>
+        </li>
+    </ol>
+
+    <h2>8. Refueling Operations</h2>
+
+    <h3>8.1 Online Refueling System</h3>
+
+    <p><cite index="9-9,9-10">Fuel assemblies at the Ignalina NPP could be changed without discontinuing the operation of the facility. This is another advantage of the reactors of the channel type</cite></p>
+
+    <h4>Refueling Machine Specifications</h4>
+    <ul>
+        <li><strong>Type:</strong> Overhead crane with sealed transfer chamber</li>
+        <li><strong>Capacity:</strong> 2 fuel assemblies per operation</li>
+        <li><strong>Speed:</strong> 15-20 channels per day</li>
+        <li><strong>Positioning Accuracy:</strong> ±2 mm</li>
+        <li><strong>Chamber Pressure:</strong> Matches reactor pressure (6.9 MPa)</li>
+    </ul>
+
+    <h3>8.2 Fuel Handling Procedure</h3>
+
+    <div class="procedure-box">
+        <strong>📋 ONLINE REFUELING SEQUENCE</strong>
+    </div>
+
+    <ol>
+        <li><strong>Channel Selection and Preparation</strong>
+            <ul>
+                <li>Select channel based on burnup criteria (>20 MWd/kgU)</li>
+                <li>Reduce local power using adjacent control rods</li>
+                <li>Cool channel to <200°C outlet temperature</li>
+                <li>Verify channel flow >30 m³/hr</li>
+            </ul>
+        </li>
+        
+        <li><strong>Refueling Machine Positioning</strong>
+            <ul>
+                <li>Position machine over selected channel</li>
+                <li>Lower and seal transfer chamber</li>
+                <li>Pressurize chamber to reactor pressure</li>
+                <li>Open channel closure plug</li>
+            </ul>
+        </li>
+        
+        <li><strong>Fuel Exchange</strong>
+            <ul>
+                <li>Engage fuel assembly with grapple</li>
+                <li>Withdraw spent fuel into transfer chamber</li>
+                <li>Rotate magazine to fresh fuel position</li>
+                <li>Insert fresh fuel assembly into channel</li>
+                <li>Verify proper seating and orientation</li>
+            </ul>
+        </li>
+        
+        <li><strong>Channel Restoration</strong>
+            <ul>
+                <li>Replace channel closure plug</li>
+                <li>Depressurize transfer chamber</li>
+                <li>Release machine seal and move to next channel</li>
+                <li>Restore normal channel flow</li>
+                <li>Return local power to normal using control rods</li>
+            </ul>
+        </li>
+    </ol>
+
+    <h3>8.3 Fuel Inspection Requirements</h3>
+
+    <table class="wikitable">
+        <tr>
+            <th>Inspection Type</th>
+            <th>Method</th>
+            <th>Sample Size</th>
+            <th>Rejection Criteria</th>
+        </tr>
+        <tr>
+            <td><strong>Visual</strong></td>
+            <td>Underwater TV camera</td>
+            <td>100% of assemblies</td>
+            <td>Visible damage or distortion</td>
+        </tr>
+        <tr>
+            <td><strong>Dimensional</strong></td>
+            <td>Go/No-go gauge</td>
+            <td>10% sample</td>
+            <td>Bow >5mm over length</td>
+        </tr>
+        <tr>
+            <td><strong>Leak Testing</strong></td>
+            <td>Sipping test</td>
+            <td>Suspect assemblies</td>
+            <td>Fission product detection</td>
+        </tr>
+        <tr>
+            <td><strong>Burnup Verification</strong></td>
+            <td>Gamma scanning</td>
+            <td>5% sample</td>
+            <td>Deviation >10% from calculated</td>
+        </tr>
+    </table>
+
+    <h2>9. In-Service Inspection Program</h2>
+
+    <h3>9.1 ISI Program Scope</h3>
+
+    <p>The RBMK In-Service Inspection program covers all safety-related pressure boundaries and structural components:</p>
+
+    <h4>ISI Categories</h4>
+    <ul>
+        <li><strong>Category A:</strong> Reactor vessel and heads</li>
+        <li><strong>Category B:</strong> Pressure vessels (drum separators, headers)</li>
+        <li><strong>Category C:</strong> Piping systems >100mm diameter</li>
+        <li><strong>Category D:</strong> Pumps and valves</li>
+        <li><strong>Category E:</strong> Supports and restraints</li>
+    </ul>
+
+    <h3>9.2 ISI Schedule</h3>
+
+    <div class="panel-diagram">
+10-YEAR ISI PROGRAM INTERVALS:
+
+Year:  1   2   3   4   5   6   7   8   9   10
+      ┌───────────┬───────────┬───────────┐
+      │  Period 1 │  Period 2 │  Period 3 │
+      │    33%    │    67%    │   100%    │
+      └───────────┴───────────┴───────────┘
+      
+Inspection Distribution:
+- Period 1: 16% minimum, 50% maximum
+- Period 2: 16% minimum, 50% maximum  
+- Period 3: 34% minimum, 50% maximum
+- Total: 100% of required examinations
+    </div>
+
+    <h3>9.3 Major Component ISI Requirements</h3>
+
+    <table class="wikitable">
+        <tr>
+            <th>Component</th>
+            <th>Examination Method</th>
+            <th>Extent</th>
+            <th>Frequency</th>
+        </tr>
+        <tr>
+            <td><strong>Reactor Vessel</strong></td>
+            <td>Visual + UT</td>
+            <td>Accessible welds</td>
+            <td>Each period</td>
+        </tr>
+        <tr>
+            <td><strong>Drum Separators</strong></td>
+            <td>Visual + MT/PT</td>
+            <td>All welds</td>
+            <td>10% per period</td>
+        </tr>
+        <tr>
+            <td><strong>Main Headers</strong></td>
+            <td>UT + RT</td>
+            <td>25% of welds</td>
+            <td>Each outage</td>
+        </tr>
+        <tr>
+            <td><strong>MCP Casings</strong></td>
+            <td>Visual + UT</td>
+            <td>Pressure boundary</td>
+            <td>One pump/period</td>
+        </tr>
+        <tr>
+            <td><strong>Channel End Fittings</strong></td>
+            <td>Visual + PT</td>
+            <td>Sample of 20</td>
+            <td>Each period</td>
+        </tr>
+        <tr>
+            <td><strong>Biological Shield</strong></td>
+            <td>Visual</td>
+            <td>Accessible areas</td>
+            <td>Annual</td>
+        </tr>
+    </table>
+
+    <h2>10. Radiation Protection During Maintenance</h2>
+
+    <h3>10.1 ALARA Program</h3>
+
+    <h4>Dose Reduction Strategies</h4>
+    <ul>
+        <li><strong>Time:</strong> Minimize exposure duration through training and practice</li>
+        <li><strong>Distance:</strong> Use remote handling tools and robotics</li>
+        <li><strong>Shielding:</strong> Install temporary lead blankets and water shields</li>
+        <li><strong>Source Reduction:</strong> Chemical decontamination and flushing</li>
+    </ul>
+
+    <h3>10.2 Typical Maintenance Dose Rates</h3>
+
+    <table class="wikitable">
+        <tr>
+            <th>Work Area</th>
+            <th>Typical Dose Rate</th>
+            <th>Primary Isotopes</th>
+            <th>Protection Required</th>
+        </tr>
+        <tr>
+            <td>Reactor Hall (shutdown)</td>
+            <td>0.1-1 mSv/hr</td>
+            <td>Co-60, Cs-137</td>
+            <td>TLD, electronic dosimeter</td>
+        </tr>
+        <tr>
+            <td>MCP Room</td>
+            <td>1-10 mSv/hr</td>
+            <td>Co-58, Co-60</td>
+            <td>Lead apron, respirator</td>
+        </tr>
+        <tr>
+            <td>Drum Separator Interior</td>
+            <td>10-50 mSv/hr</td>
+            <td>Co-60, Cr-51</td>
+            <td>Fresh air suit, extremity TLD</td>
+        </tr>
+        <tr>
+            <td>Control Rod Drive (withdrawn)</td>
+            <td>50-200 mSv/hr</td>
+            <td>Co-60, Mn-54</td>
+            <td>Remote handling required</td>
+        </tr>
+        <tr>
+            <td>Spent Fuel (1 day decay)</td>
+            <td>>1000 mSv/hr</td>
+            <td>Mixed fission products</td>
+            <td>Underwater handling only</td>
+        </tr>
+    </table>
+
+    <h3>10.3 Contamination Control</h3>
+
+    <div class="warning-box">
+        <strong>⚠️ CONTAMINATION ZONES:</strong><br>
+        • Zone I (Clean): <0.4 Bq/cm² alpha, <4 Bq/cm² beta<br>
+        • Zone II (Controlled): <4 Bq/cm² alpha, <40 Bq/cm² beta<br>
+        • Zone III (High Contamination): >40 Bq/cm² beta<br>
+        • Always perform contamination survey when exiting zones
+    </div>
+
+    <h2>Maintenance Records and Documentation</h2>
+
+    <h3>Required Documentation</h3>
+
+    <h4>Work Package Contents</h4>
+    <ul>
+        <li><strong>Work Order:</strong> Detailed scope and instructions</li>
+        <li><strong>Safety Analysis:</strong> Hazard assessment and controls</li>
+        <li><strong>Radiation Work Permit:</strong> Dose estimates and protection requirements</li>
+        <li><strong>Procedures:</strong> Step-by-step maintenance instructions</li>
+        <li><strong>Drawings:</strong> Current configuration drawings and P&IDs</li>
+        <li><strong>Test Requirements:</strong> Post-maintenance testing criteria</li>
+        <li><strong>QA Hold Points:</strong> Required inspections and sign-offs</li>
+    </ul>
+
+    <h3>Performance Indicators</h3>
+
+    <table class="wikitable">
+        <tr>
+            <th>Indicator</th>
+            <th>Target</th>
+            <th>Measurement</th>
+            <th>Frequency</th>
+        </tr>
+        <tr>
+            <td>Preventive Maintenance Completion</td>
+            <td>>95%</td>
+            <td>PM completed on schedule</td>
+            <td>Monthly</td>
+        </tr>
+        <tr>
+            <td>Corrective Maintenance Backlog</td>
+            <td><200 items</td>
+            <td>Open work orders >3 months</td>
+            <td>Weekly</td>
+        </tr>
+        <tr>
+            <td>Rework Rate</td>
+            <td><2%</td>
+            <td>Repeat repairs within 30 days</td>
+            <td>Quarterly</td>
+        </tr>
+        <tr>
+            <td>Collective Dose</td>
+            <td><2 person-Sv/year</td>
+            <td>Total maintenance exposure</td>
+            <td>Annual</td>
+        </tr>
+        <tr>
+            <td>Equipment Availability</td>
+            <td>>98%</td>
+            <td>Safety system availability</td>
+            <td>Monthly</td>
+        </tr>
+    </table>
+
+    <h2>Emergency Maintenance Procedures</h2>
+
+    <h3>Control Rod Drive Emergency Repair</h3>
+
+    <div class="danger-box">
+        <strong>🚨 EMERGENCY PROCEDURE - STUCK CONTROL ROD</strong>
+    </div>
+
+    <p>If a control rod fails to insert during a scram:</p>
+
+    <ol>
+        <li><strong>Immediate Actions</strong>
+            <ul>
+                <li>Verify AZ-5 actuation and other rods inserting</li>
+                <li>Attempt manual insertion from local panel</li>
+                <li>If unsuccessful, activate electromagnetic clutch release</li>
+                <li>Monitor local power and temperature</li>
+            </ul>
+        </li>
+        
+        <li><strong>Follow-up Actions</strong>
+            <ul>
+                <li>Insert adjacent control rods to compensate</li>
+                <li>Reduce reactor power if necessary</li>
+                <li>Initiate troubleshooting of drive mechanism</li>
+                <li>Prepare for rod uncoupling if required</li>
+            </ul>
+        </li>
+        
+        <li><strong>Recovery</strong>
+            <ul>
+                <li>Once reactor is stable, plan repair strategy</li>
+                <li>May require reactor shutdown if safety margin inadequate</li>
+                <li>Document failure mode for root cause analysis</li>
+            </ul>
+        </li>
+    </ol>
+
+    <h2>Appendices</h2>
+
+    <h3>A. Maintenance Tool List</h3>
+
+    <h4>Specialized RBMK Tools</h4>
+    <ul>
+        <li><strong>Channel Gauging Tool:</strong> Measures channel bore diameter</li>
+        <li><strong>Rod Drive Coupling Tool:</strong> For control rod connection/disconnection</li>
+        <li><strong>Fuel Grapple:</strong> Remote handling of fuel assemblies</li>
+        <li><strong>Channel Cutting Machine:</strong> For pressure tube replacement</li>
+        <li><strong>Eddy Current Probe:</strong> Channel inspection equipment</li>
+        <li><strong>Graphite Sampling Device:</strong> Core boring equipment</li>
+    </ul>
+
+    <h3>B. Common Spare Parts Inventory</h3>
+
+    <table class="wikitable">
+        <tr>
+            <th>Component</th>
+            <th>Minimum Stock</th>
+            <th>Lead Time</th>
+            <th>Storage Requirements</th>
+        </tr>
+        <tr>
+            <td>Control rod drive motor</td>
+            <td>4 units</td>
+            <td>6 months</td>
+            <td>Controlled environment</td>
+        </tr>
+        <tr>
+            <td>MCP mechanical seal</td>
+            <td>8 sets</td>
+            <td>3 months</td>
+            <td>Clean, dry storage</td>
+        </tr>
+        <tr>
+            <td>Channel end fittings</td>
+            <td>20 sets</td>
+            <td>12 months</td>
+            <td>Corrosion protection</td>
+        </tr>
+        <tr>
+            <td>ECCS pump impeller</td>
+            <td>2 units</td>
+            <td>9 months</td>
+            <td>Original packaging</td>
+        </tr>
+        <tr>
+            <td>Safety valve assemblies</td>
+            <td>6 units</td>
+            <td>6 months</td>
+            <td>Certified storage</td>
+        </tr>
+    </table>
+
+    <h3>C. Maintenance Training Requirements</h3>
+
+    <h4>Qualification Levels</h4>
+    <ul>
+        <li><strong>Level I:</strong> Basic maintenance tasks under supervision</li>
+        <li><strong>Level II:</strong> Independent maintenance performer</li>
+        <li><strong>Level III:</strong> Maintenance supervisor/specialist</li>
+        <li><strong>Level IV:</strong> Maintenance engineer/planner</li>
+    </ul>
+
+    <h3>References</h3>
+    
+    <ul>
+        <li>IAEA-TECDOC-1405: "Management of Life Cycle and Ageing at Nuclear Power Plants" (2004)</li>
+        <li>INSAG-15: "Key Practical Issues in Strengthening Safety Culture" (2002)</li>
+        <li>IEC 62342: "Nuclear Power Plants - I&C Systems Important to Safety - Maintenance" (2007)</li>
+        <li>EPRI TR-106857: "Preventive Maintenance Basis Database" (1996)</li>
+        <li>INPO 09-008: "Principles for Effective Maintenance" (2009)</li>
+    </ul>
+
+    <h2>See Also</h2>
+    
+    <ul>
+        <li><a href="index.html">← Return to RBMK Unit 3 Main Page</a></li>
+        <li><a href="control-systems.html">Control Systems Manual</a></li>
+        <li><a href="emergency-procedures.html">Emergency Procedures Manual</a></li>
+        <li><a href="https://en.wikipedia.org/wiki/RBMK">RBMK Reactor Design</a></li>
+        <li><a href="https://en.wikipedia.org/wiki/Nuclear_power_plant">Nuclear Power Plant Operations</a></li>
+        <li><a href="radiation-protection.html">Radiation Protection Guidelines</a></li>
+    </ul>
+
+    <div class="warning-box" style="margin-top: 3em;">
+        <strong>⚠️ Disclaimer:</strong> This manual is for educational and historical reference only. It should not be used for actual reactor maintenance operations. All nuclear reactor maintenance must be conducted by qualified personnel following approved procedures specific to each facility. The information presented here is based on publicly available technical documentation and may not reflect current safety standards or modifications. Always refer to current, facility-specific procedures and regulatory requirements.
+    </div>
+
+</div>
+
+<!-- Lightbox overlay -->
+<div class="lightbox-overlay" id="lightbox">
+    <div class="lightbox-content">
+        <span class="lightbox-close" id="lightbox-close">&times;</span>
+        <img id="lightbox-img" src="" alt="">
+    </div>
+</div>
+
+<script>
+    // Lightbox functionality
+    const images = document.querySelectorAll('.lightbox');
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    const lightboxClose = document.getElementById('lightbox-close');
+
+    images.forEach(img => {
+        img.addEventListener('click', function() {
+            lightboxImg.src = this.src;
+            lightboxImg.alt = this.alt;
+            lightbox.classList.add('show');
+        });
+    });
+
+    lightboxClose.addEventListener('click', function() {
+        lightbox.classList.remove('show');
+    });
+    lightbox.addEventListener('click', function(e) {
+        if (e.target === lightbox) {
+            lightbox.classList.remove('show');
+        }
+    });
+
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
+
+    // Interactive checkbox functionality
+    document.querySelectorAll('.checklist input[type="checkbox"]').forEach(checkbox => {
+        checkbox.addEventListener('change', function() {
+            if (this.checked) {
+                this.parentElement.style.textDecoration = 'line-through';
+                this.parentElement.style.opacity = '0.6';
+            } else {
+                this.parentElement.style.textDecoration = 'none';
+                this.parentElement.style.opacity = '1';
+            }
+        });
+    });
+</script>
+</body>
+</html>
