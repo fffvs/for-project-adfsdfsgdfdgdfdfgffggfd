@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>RBMK Unit 3 Reactor - Wikipedia</title>
+    <style>
+        body {
+            font-family: 'Linux Libertine', 'Georgia', serif;
+            background: #f8f9fa;
+            color: #202122;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 40px auto;
+            background: #fff;
+            border: 1px solid #a2a9b1;
+            padding: 32px;
+            box-shadow: 0 0 10px #ccc;
+        }
+        h1 {
+            font-size: 2.2em;
+            border-bottom: 1px solid #a2a9b1;
+            margin-bottom: 0.5em;
+        }
+        h2 {
+            font-size: 1.5em;
+            border-bottom: 1px solid #a2a9b1;
+            margin-top: 2em;
+            margin-bottom: 0.5em;
+        }
+        h3 {
+            font-size: 1.2em;
+            margin-top: 1.5em;
+            margin-bottom: 0.5em;
+        }
+        .infobox {
+            float: right;
+            width: 270px;
+            margin: 0 0 1em 2em;
+            background: #f8f9fa;
+            border: 1px solid #a2a9b1;
+            padding: 8px;
+            font-size: 0.95em;
+        }
+        .infobox th {
+            background: #eaecf0;
+            padding: 4px;
+            text-align: left;
+        }
+        .infobox td {
+            padding: 4px;
+        }
+        .wikitable {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 1em 0;
+        }
+        .wikitable th, .wikitable td {
+            border: 1px solid #a2a9b1;
+            padding: 6px;
+            text-align: center;
+        }
+        .wikitable th {
+            background: #eaecf0;
+        }
+        .thumb {
+            margin: 1em 0;
+            text-align: center;
+        }
+        .thumb img {
+            max-width: 100%;
+            border: 1px solid #a2a9b1;
+            background: #fff;
+            cursor: pointer;
+        }
+        .thumbcaption {
+            font-size: 0.95em;
+            color: #555;
+            margin-top: 0.2em;
+        }
+        ul {
+            margin: 0.5em 0 0.5em 1.5em;
+        }
+        a {
+            color: #0645ad;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .clear {
+            clear: both;
+        }
+        .warning-box {
+            background: #fff8dc;
+            border: 2px solid #ff9800;
+            padding: 10px;
+            margin: 1em 0;
+            border-radius: 5px;
+        }
+        .panel-diagram {
+            background: #f0f0f0;
+            border: 1px solid #ccc;
+            padding: 15px;
+            margin: 1em 0;
+            font-family: monospace;
+        }
+
+        /* Lightbox styles */
+        .lightbox-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 10000;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s;
+        }
+        .lightbox-overlay.show {
+            opacity: 1;
+            pointer-events: auto;
+        }
+        .lightbox-content {
+            position: relative;
+            max-width: 90%;
+            max-height: 90%;
+        }
+        .lightbox-content img {
+            max-width: 100%;
+            max-height: 80vh;
+            display: block;
+            margin: 0 auto;
+        }
+        .lightbox-close {
+            position: absolute;
+            top: -40px;
+            right: 0;
+            color: white;
+            font-size: 2em;
+            font-weight: bold;
+            cursor: pointer;
+            background: #444;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            line-height: 40px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>RBMK Unit 3 Reactor (from what i remember)</h1>
+    <p><em>all info on here was mostly by memory, some really specific details were researched.</em></p>
+
+    <table class="infobox">
+        <tr>
+            <th colspan="2" style="text-align:center;">RBMK-1000 Unit 3</th>
+        </tr>
+        <tr>
+            <td colspan="2" style="text-align:center;">
+                <img src="https://i.ytimg.com/vi/Oe_zzTQFV3o/maxresdefault.jpg" alt="RBMK Unit 3 Reactor Hall" style="width:100%;max-width:240px;" class="lightbox">
+                <div class="thumbcaption">The reactor hall of a typical RBMK Unit 3</div>
+            </td>
+        </tr>
+        <tr>
+            <th>Type</th>
+            <td>RBMK-1000 (Generation 2)</td>
+        </tr>
+        <tr>
+            <th>Thermal Power</th>
+            <td>3,200 MW</td>
+        </tr>
+        <tr>
+            <th>Electrical Output</th>
+            <td>925 MW</td>
+        </tr>
+        <tr>
+            <th>Fuel Channels</th>
+            <td>1,661</td>
+        </tr>
+        <tr>
+            <th>Control Rod Channels</th>
+            <td>211</td>
+        </tr>
+        <tr>
+            <th>Core Height</th>
+            <td>7 meters</td>
+        </tr>
+        <tr>
+            <th>Core Diameter</th>
+            <td>11.8 meters</td>
+        </tr>
+        <tr>
+            <th>Moderator</th>
+            <td>Graphite (1,700 tons i think)</td>
+        </tr>
+    </table>
+
+    <p><strong>RBMK Unit 3</strong> refers to the third reactor unit in RBMK nuclear power plants, specifically those of the second generation design constructed in the late 1970s and early 1980s conforming to OPB-82 safety standards<!--citation:1-->. These reactors are graphite-moderated, water-cooled channel-type reactors that can produce a gross output of 1,000 MW of electrical power from 3,200 MW of thermal power. The actual electrical output is 925 MW, not 1,000<!--citation:3-->.</p>
+
+    <div class="warning-box">
+        <strong>⚠️ Warning:</strong> This website is only just for example, all of the knowledge and info was from my memory and a bit of searching, do not actually try to operate the reactor (if you find one, somehow) using this website please. it will get you killed if you try lol
+    </div>
+
+    <div class="clear"></div>
+
+    <h2>Reactor Building Layout</h2>
+    
+    <p>The RBMK Unit 3 reactor building is a massive structure divided into several key areas<!--citation:1-->:</p>
+
+    <h3>Core Structure</h3>
+    <p>The reactor core is housed in a reinforced concrete vault measuring from what i can find <strong>21.6m × 21.6m × 25.5m</strong>. The core itself consists of graphite blocks arranged in a cylindrical formation with a diameter of, again, from what i can find was 14 meters and height of 8 meters<!--citation:1-->. The active core region measures 11.8 meters in diameter by 7 meters in height.</p>
+
+    <h3>Structural Schemes</h3>
+    <p>The reactor is built with several structural components called "schemes"<!--citation:2-->:</p>
+    <ul>
+        <li><strong>Scheme S</strong> - Five-meter tall steel structure at the bottom, supporting the active zone weight</li>
+        <li><strong>Scheme OR</strong> - Two-meter high cylinder forming part of the biological shield</li>
+        <li><strong>Scheme KZh</strong> - Shield made from 16mm thick welded steel with reinforcements</li>
+        <li><strong>Schemes L and D</strong> - Water-filled hollow metal reservoirs providing structural support and biological protection</li>
+        <li><strong>Scheme E (Elena)</strong> - Three-meter tall upper biological shield weighing 2,000 tons<!--citation:1--></li>
+        <li><strong>Scheme G</strong> - Upper assembly components</li>
+    </ul>
+
+    <h3>Support Facilities</h3>
+    <ul>
+        <li><strong>Control Room</strong> - Located below the deaerator room floor</li>
+        <li><strong>Turbine Hall</strong> - Houses two 500 MW turbines</li>
+        <li><strong>Machine Hall</strong> - Contains refueling equipment</li>
+        <li><strong>Cooling Systems</strong> - Pumping stations and heat exchangers</li>
+        <li><strong>Ventilation Stack</strong> - For filtered gas discharge</li>
+    </ul>
+
+    <h2>Control Room Overview</h2>
+
+    <p>The RBMK Unit 3 control room is the nerve center of reactor operations. It features three main operator workstations<!--citation:10-->:</p>
+
+    <ol>
+        <li><strong>Reactor Control Station</strong> - Manages nuclear processes in the reactor core</li>
+        <li><strong>Systems Support Station</strong> - Controls pumps, hydraulic and gas contours</li>
+        <li><strong>Turbine Control Station</strong> - Oversees turbines and electrical generation</li>
+    </ol>
+
+    <h2>Control Room Panels Detailed Breakdown</h2>
+
+    <h3>1. Reactor Core Displays</h3>
+
+    <p>The control room features two large circular mimic displays<!--citation:1--><!--citation:7-->:</p>
+
+    <h4>Control Rod Position Display (Selsyns Panel)</h4>
+    <ul>
+        <li>Shows position of all 211 control rods</li>
+        <li>Color-coded dials indicate rod function:
+            <ul>
+                <li><strong>Red</strong> - Automatic control rods (AR)</li>
+                <li><strong>Yellow</strong> - Shortened absorber rods (USP)</li>
+                <li><strong>Green</strong> - Manual control rods</li>
+                <li><strong>Blue</strong> - Emergency protection rods</li>
+            </ul>
+        </li>
+        <li>Each dial shows rod insertion depth from 0-7 meters</li>
+    </ul>
+
+    <h4>Core Channel Cartogram</h4>
+    <ul>
+        <li>Circular display with 1,661 tiles representing each fuel channel<!--citation:10--></li>
+        <li>Each tile has a channel number and indicator light</li>
+        <li>Lights illuminate when channel parameters exceed normal ranges</li>
+        <li>Connected to SKALA computer for real-time monitoring<!--citation:1--><!--citation:7--></li>
+    </ul>
+
+    <h3>2. Reactor Integrity Monitoring Panel</h3>
+
+    <p>This critical panel monitors the structural integrity of the reactor (i tried, ok?)<!--citation:10-->:</p>
+
+    <div class="panel-diagram"> 
+    REACTOR INTEGRITY DISPLAY LAYOUT:
+    ┌──────────────────────────────────────┐
+    │  Temperature Alarms (Graphite/Steel) │
+    │  ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ●     │
+    │                                      │
+    │ [Channel Integrity Circle - 26 Zones]│
+    │        Moisture Detection System     │
+    │                                      │
+    │  Scheme L Water Level: ████████      │
+    │  Pumps: [P1]●[P2]○[P3-backup]        │
+    └──────────────────────────────────────┘
+    </div>
+
+    <h4>Key Monitoring Systems:</h4>
+    <ul>
+        <li><strong>Temperature sensors</strong> - Monitor graphite, concrete, and structural panels</li>
+        <li><strong>Gas moisture detection</strong> - 2,000+ detectors grouped in 26 zones check for channel leaks<!--citation:10--></li>
+        <li><strong>Scheme monitoring</strong> - Real-time status of structural components S, OR, KZh, E, and G</li>
+        <li><strong>SKALA codes</strong> - Equipment IDs for requesting detailed readings from the computer</li>
+    </ul>
+
+    <h3>3. Main Circulation System Panels</h3>
+
+    <p>Seven large panels display the reactor's cooling systems<!--citation:10-->:</p>
+
+    <h4>Drum Separator Display (Mirrored for Both Loops)</h4>
+    <ul>
+        <li>Shows two drum separators (31m long, 2.8m diameter each)<!--citation:1--></li>
+        <li>Pressure, temperature, and water level warnings</li>
+        <li>Steam flow paths to turbines</li>
+        <li>Feedwater injection lines (3 normal + 1 bypass)</li>
+        <li>Connection to 4 main circulation pumps per loop</li>
+    </ul>
+
+    <h4>Main Circulation Pump Status Displays</h4>
+    <p>Each pump (8 total, capacity 5,500-12,000 m³/h) has dedicated monitoring<!--citation:1--><!--citation:10-->:</p>
+    <ul>
+        <li><strong>Lubrication system</strong> - Oil flow to bearings with cooling</li>
+        <li><strong>Hydrostatic bearing</strong> - Water film status for bottom bearing</li>
+        <li><strong>Seal water injection</strong> - Prevents radioactive leaks</li>
+        <li><strong>Motor cooling</strong> - Temperature management</li>
+    </ul>
+
+    <h4>Control Rod Channel Cooling</h4>
+    <ul>
+        <li>Closed loop of purified water</li>
+        <li>Gas stripping devices remove hydrogen/oxygen</li>
+        <li>Heat exchangers cooled by intermediate loop</li>
+        <li>Prevents direct contamination of cooling pond</li>
+    </ul>
+
+    <h3>4. Blowdown and Cooldown Systems</h3>
+
+    <p>Critical for reactor water chemistry and emergency operations<!--citation:10-->:</p>
+    <ul>
+        <li><strong>Purification unit</strong> - Removes chemical contaminants from coolant</li>
+        <li><strong>Regenerator</strong> - Heat recovery system</li>
+        <li><strong>Aftercooler</strong> - Temperature reduction</li>
+        <li><strong>Emergency tanks</strong> - High-capacity drainage during cooldown</li>
+    </ul>
+
+    <h3>5. Turbine Control Panels</h3>
+
+    <p>Two massive displays (one per turbine) showing<!--citation:10-->:</p>
+
+    <h4>Steam Flow Path</h4>
+    <ol>
+        <li>High-pressure steam enters through stop/control valves</li>
+        <li>Passes through 1 high-pressure cylinder</li>
+        <li>Goes to 4 intermediate separators/reheaters</li>
+        <li>Feeds 4 low-pressure cylinders</li>
+        <li>Exhausts to 4 condensers</li>
+    </ol>
+
+    <h4>Condensate Processing</h4>
+    <ul>
+        <li>3 condensate pumps move water from condensers</li>
+        <li>Three-stage ejectors remove dissolved gases</li>
+        <li>5 regenerative heaters warm condensate using turbine steam</li>
+        <li>Purification removes remaining impurities</li>
+    </ul>
+
+    <h4>Turbine Support Systems</h4>
+    <ul>
+        <li>Lubrication oil circulation and cooling</li>
+        <li>Bearing temperature monitoring</li>
+        <li>Emergency drain systems</li>
+        <li>30-meter rotor alignment indicators</li>
+    </ul>
+
+    <h3>6. Electrical Generator Panels</h3>
+
+    <p>Two smaller panels (one per generator) display<!--citation:10-->:</p>
+    <ul>
+        <li>Main transformer connections</li>
+        <li>Grid connection status and load</li>
+        <li>Internal power transformers for reactor systems</li>
+        <li>Synchronization indicators</li>
+        <li>Protective relay status</li>
+    </ul>
+
+    <h3>7. Feedwater and Deaerator Systems</h3>
+
+    <p>Critical for removing corrosive gases from water<!--citation:10-->:</p>
+
+    <h4>Deaerator Operation</h4>
+    <ul>
+        <li>Low-pressure steam injection heats condensate near boiling</li>
+        <li>Dissolved oxygen, nitrogen, and CO₂ are driven out</li>
+        <li>Clean feedwater collects in deaerator tanks</li>
+        <li>5 feedwater pumps return water to drum separators</li>
+    </ul>
+
+    <h4>Clean Condensate Distribution</h4>
+    <ul>
+        <li>Supplies makeup water to control rod cooling</li>
+        <li>Refills side biological shield (Scheme L)</li>
+        <li>Provides seal water for pumps</li>
+    </ul>
+
+    <h2>SKALA Computer System</h2>
+
+    <p>The SKALA (or SCALA) computer system is the brain of RBMK operations<!--citation:1--><!--citation:7-->:</p>
+
+    <h3>Capabilities</h3>
+    <ul>
+        <li>Collects data from approximately 4,000 sources</li>
+        <li>Calculates reactivity margin every 10-15 minutes</li>
+        <li>Provides recommendations to operators</li>
+        <li>Displays channel-by-channel power distribution</li>
+        <li>Uses 1960s computer technology housed in separate room</li>
+    </ul>
+
+    <h3>Operator Interface</h3>
+    <ul>
+        <li>Request keyboard for entering SKALA codes</li>
+        <li>Digital displays showing requested values</li>
+        <li>Teletype for detailed printouts</li>
+        <li>Connection to core map display tiles</li>
+    </ul>
+
+    <h2>Safety Systems</h2>
+
+    <h3>Reactor Protection Systems</h3>
+
+    <p>Multiple layers of protection ensure safe operation<!--citation:1--><!--citation:3-->:</p>
+
+    <ul>
+        <li><strong>Emergency Core Cooling System (ECCS)</strong>
+            <ul>
+                <li>12 accumulator tanks with nitrogen-pressurized water</li>
+                <li>3 pairs of electrical pumps for long-term cooling</li>
+                <li>Heat exchangers for decay heat removal</li>
+            </ul>
+        </li>
+        <li><strong>Reactor Control and Protection System (RCPS)</strong>
+            <ul>
+                <li>211 movable control rods</li>
+                <li>Automatic scram on parameter exceedance</li>
+                <li>Manual emergency shutdown capability</li>
+            </ul>
+        </li>
+        <li><strong>Physical Power Density Distribution Control (PPDDCS)</strong>
+            <ul>
+                <li>Over 100 radial power monitors</li>
+                <li>12 axial power distribution sensors</li>
+                <li>Maintains power between 10-120% nominal</li>
+            </ul>
+        </li>
+    </ul>
+
+    <h3>Containment Features</h3>
+    <ul>
+        <li>Pressure suppression pools ("bubbler" pools) on levels +3 and +0<!--citation:1--></li>
+        <li>Steam distribution corridors for accident mitigation</li>
+        <li>Leaktight compartments around pumps (0.45 MPa overpressure capacity)</li>
+        <li>Reactor cavity handles 0.18 MPa overpressure</li>
+    </ul>
+
+    <h2>Operating Parameters</h2>
+
+    <table class="wikitable">
+        <tr>
+            <th>Parameter</th>
+            <th>Value</th>
+            <th>Notes</th>
+        </tr>
+        <tr>
+            <td>Coolant inlet temperature</td>
+            <td>265-270°C</td>
+            <td>Must stay below boiling point</td>
+        </tr>
+        <tr>
+            <td>Coolant outlet temperature</td>
+            <td>284°C</td>
+            <td>Steam-water mixture</td>
+        </tr>
+        <tr>
+            <td>Operating pressure</td>
+            <td>6.9 MPa</td>
+            <td>In drum separator and reactor</td>
+        </tr>
+        <tr>
+            <td>Coolant flow rate</td>
+            <td>46,000-48,000 m³/h</td>
+            <td>Total through reactor</td>
+        </tr>
+        <tr>
+            <td>Steam production</td>
+            <td>5,440-5,600 t/h</td>
+            <td>At full power</td>
+        </tr>
+        <tr>
+            <td>Graphite max temperature</td>
+            <td>730°C</td>
+            <td>Cooled by helium-nitrogen mix</td>
+        </tr>
+        <tr>
+            <td>Fuel pellet max temperature</td>
+            <td>2,100°C</td>
+            <td>UO₂ pellets, 2% enrichment</td>
+        </tr>
+        <tr>
+            <td>Control rod insertion time</td>
+            <td>18-21 seconds</td>
+            <td>Full insertion from top</td>
+        </tr>
+        <tr>
+            <td>Reactivity margin (normal)</td>
+            <td>43-48 control rods</td>
+            <td>Minimum insertion requirement</td>
+        </tr>
+    </table>
+
+    <h2>Fuel Management</h2>
+
+    <h3>Fuel Assembly Specifications</h3>
+    <ul>
+        <li>Two sub-assemblies per channel, 18 fuel rods each<!--citation:1--></li>
+        <li>Total uranium mass: 114.7 kg per assembly</li>
+        <li>Fuel burnup: 20 MW·d/kg</li>
+        <li>Total length: 10.025 m (6.862 m active region)</li>
+        <li>Zircaloy cladding with 2% enriched UO₂ pellets</li>
+    </ul>
+
+    <h3>Online Refueling Capability</h3>
+    <p>The RBMK design allows fuel replacement without shutdown<!--citation:1-->:</p>
+    <ul>
+        <li>Refueling machine on gantry crane</li>
+        <li>Capacity: 2 assemblies/day normal, 5/day maximum</li>
+        <li>Pressure equalization before channel opening</li>
+        <li>Spent fuel moved to cooling pond</li>
+        <li>Total fuel inventory: 192 tons under stationary conditions</li>
+    </ul>
+
+    <h2>Post-Chernobyl Modifications</h2>
+
+    <p>Following the 1986 Chernobyl disaster, all RBMK reactors including Unit 3 types underwent significant safety upgrades<!--citation:1--><!--citation:16-->:</p>
+
+    <ul>
+        <li>Installation of additional absorbers to reduce positive void coefficient</li>
+        <li>12 second control rod servo motors (insertion time reduced so the graphite doesn't have time to react)</li>
+        <li>ORM (Operational Reactivity Margin) chart recorders added</li>
+        <li>Enhanced computer control systems</li>
+        <li>Improved operator training and procedures</li>
+        <li>Accident localization systems retrofitted</li>
+        <li>Upgraded emergency core cooling systems so chernobyl does not happen again.</li>
+    </ul>
+
+    <h2>See also</h2>
+    <ul>
+        <li><a href="https://en.wikipedia.org/wiki/RBMK">RBMK reactor design</a></li>
+        <li><a href="https://en.wikipedia.org/wiki/Chernobyl_disaster">Chernobyl disaster</a></li>
+        <li><a href="https://en.wikipedia.org/wiki/Nuclear_reactor">Nuclear reactor technology</a></li>
+        <li><a href="https://en.wikipedia.org/wiki/Graphite-moderated_reactor">Graphite-moderated reactors</a></li>
+        <li><a href="control-systems.html"><strong>In-depth: RBMK Control Systems Manual</strong></a></li>
+    </ul>
+</div>
+
+<!-- Lightbox overlay (hidden by default) -->
+<div class="lightbox-overlay" id="lightbox">
+    <div class="lightbox-content">
+        <span class="lightbox-close" id="lightbox-close">&times;</span>
+        <img id="lightbox-img" src="" alt="">
+    </div>
+</div>
+
+<script>
+    // Get all images with class="lightbox"
+    const images = document.querySelectorAll('.lightbox');
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    const lightboxClose = document.getElementById('lightbox-close');
+
+    // When an image is clicked, show it in the lightbox
+    images.forEach(img => {
+        img.addEventListener('click', function() {
+            lightboxImg.src = this.src;
+            lightboxImg.alt = this.alt;
+            lightbox.classList.add('show');
+        });
+    });
+
+    // Close the lightbox when the X or overlay is clicked
+    lightboxClose.addEventListener('click', function() {
+        lightbox.classList.remove('show');
+    });
+    lightbox.addEventListener('click', function(e) {
+        if (e.target === lightbox) {
+            lightbox.classList.remove('show');
+        }
+    });
+</script>
+</body>
+</html>
