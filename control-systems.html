@@ -1,0 +1,1220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>RBMK Control Systems Manual - Wikipedia</title>
+    <style>
+        body {
+            font-family: 'Linux Libertine', 'Georgia', serif;
+            background: #f8f9fa;
+            color: #202122;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 40px auto;
+            background: #fff;
+            border: 1px solid #a2a9b1;
+            padding: 32px;
+            box-shadow: 0 0 10px #ccc;
+        }
+        h1 {
+            font-size: 2.2em;
+            border-bottom: 1px solid #a2a9b1;
+            margin-bottom: 0.5em;
+        }
+        h2 {
+            font-size: 1.5em;
+            border-bottom: 1px solid #a2a9b1;
+            margin-top: 2em;
+            margin-bottom: 0.5em;
+        }
+        h3 {
+            font-size: 1.2em;
+            margin-top: 1.5em;
+            margin-bottom: 0.5em;
+        }
+        h4 {
+            font-size: 1.1em;
+            margin-top: 1em;
+            margin-bottom: 0.5em;
+            font-weight: bold;
+        }
+        .infobox {
+            float: right;
+            width: 300px;
+            margin: 0 0 1em 2em;
+            background: #f8f9fa;
+            border: 1px solid #a2a9b1;
+            padding: 8px;
+            font-size: 0.95em;
+        }
+        .infobox th {
+            background: #eaecf0;
+            padding: 4px;
+            text-align: left;
+        }
+        .infobox td {
+            padding: 4px;
+        }
+        .wikitable {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 1em 0;
+        }
+        .wikitable th, .wikitable td {
+            border: 1px solid #a2a9b1;
+            padding: 6px;
+            text-align: left;
+        }
+        .wikitable th {
+            background: #eaecf0;
+            text-align: center;
+        }
+        .wikitable td.center {
+            text-align: center;
+        }
+        .thumb {
+            margin: 1em 0;
+            text-align: center;
+        }
+        .thumb img {
+            max-width: 100%;
+            border: 1px solid #a2a9b1;
+            background: #fff;
+            cursor: pointer;
+        }
+        .thumbcaption {
+            font-size: 0.95em;
+            color: #555;
+            margin-top: 0.2em;
+        }
+        ul {
+            margin: 0.5em 0 0.5em 1.5em;
+        }
+        ol {
+            margin: 0.5em 0 0.5em 1.5em;
+        }
+        a {
+            color: #0645ad;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .clear {
+            clear: both;
+        }
+        .warning-box {
+            background: #fff8dc;
+            border: 2px solid #ff9800;
+            padding: 10px;
+            margin: 1em 0;
+            border-radius: 5px;
+        }
+        .danger-box {
+            background: #ffe4e1;
+            border: 2px solid #ff0000;
+            padding: 10px;
+            margin: 1em 0;
+            border-radius: 5px;
+        }
+        .info-box {
+            background: #e8f4ff;
+            border: 2px solid #0066cc;
+            padding: 10px;
+            margin: 1em 0;
+            border-radius: 5px;
+        }
+        .panel-diagram {
+            background: #f0f0f0;
+            border: 1px solid #ccc;
+            padding: 15px;
+            margin: 1em 0;
+            font-family: 'Courier New', monospace;
+            white-space: pre;
+            overflow-x: auto;
+            font-size: 0.9em;
+        }
+        .code-block {
+            background: #f8f8f8;
+            border: 1px solid #ddd;
+            padding: 10px;
+            margin: 1em 0;
+            font-family: 'Courier New', monospace;
+            font-size: 0.95em;
+        }
+        .procedure-box {
+            background: #f0f8ff;
+            border-left: 4px solid #0066cc;
+            padding: 10px;
+            margin: 1em 0;
+        }
+        .toc {
+            background: #f8f9fa;
+            border: 1px solid #a2a9b1;
+            padding: 10px;
+            display: inline-block;
+            margin: 1em 0;
+        }
+        .toc-title {
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 0.5em;
+        }
+        .toc ul {
+            margin: 0.2em 0 0.2em 1em;
+        }
+        .toc li {
+            margin: 0.2em 0;
+        }
+
+        /* Lightbox styles */
+        .lightbox-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 10000;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s;
+        }
+        .lightbox-overlay.show {
+            opacity: 1;
+            pointer-events: auto;
+        }
+        .lightbox-content {
+            position: relative;
+            max-width: 90%;
+            max-height: 90%;
+        }
+        .lightbox-content img {
+            max-width: 100%;
+            max-height: 80vh;
+            display: block;
+            margin: 0 auto;
+        }
+        .lightbox-close {
+            position: absolute;
+            top: -40px;
+            right: 0;
+            color: white;
+            font-size: 2em;
+            font-weight: bold;
+            cursor: pointer;
+            background: #444;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            line-height: 40px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>RBMK Control Systems Manual</h1>
+    
+    <table class="infobox">
+        <tr>
+            <th colspan="2" style="text-align:center;">RBMK Control Systems</th>
+        </tr>
+        <tr>
+            <td colspan="2" style="text-align:center;">
+                <img src="https://lh4.googleusercontent.com/proxy/5QErkBpMs0hqasiI4ocZGjvCIn_l7lQyo9P1bixdUIzRzcmAfbObNk4szAC3nLxCnakkkd1K6FbhFnXLkj70j1vQiXBFnuN0sn8ONCTnZVbJoQLlB5lJ-eRsHumSyQGB-YmS8s6282RsuNuYwPXbcWGiFD-bK8Q3gLDk2U-e7uMStCHie4w" alt="RBMK Control Room" style="width:100%;max-width:280px;" class="lightbox">
+                <div class="thumbcaption">RBMK control room (Modernized)</div>
+            </td>
+        </tr>
+        <tr>
+            <th>Primary System</th>
+            <td>SUZ (Control & Protection System)</td>
+        </tr>
+        <tr>
+            <th>Computer System</th>
+            <td>SKALA-M (СКАЛА)</td>
+        </tr>
+        <tr>
+            <th>Control Rods</th>
+            <td>211 total</td>
+        </tr>
+        <tr>
+            <th>Response Time</th>
+            <td>12-21 seconds (full insertion)</td>
+        </tr>
+        <tr>
+            <th>Monitoring Points</th>
+            <td>~4,000 parameters</td>
+        </tr>
+        <tr>
+            <th>Safety Systems</th>
+            <td>AZ-5 (Emergency Protection)</td>
+        </tr>
+        <tr>
+            <th>Operator Stations</th>
+            <td>3 primary positions</td>
+        </tr>
+    </table>
+
+    <p>The <strong>RBMK Control Systems Manual</strong> provides comprehensive operational procedures and technical specifications for the control and protection systems of RBMK-1000 reactors. This manual covers the SUZ (Sistema Upravleniya i Zashchity - Control and Protection System), SKALA computer system, and all associated instrumentation required for safe reactor operation<!--citation:1-->.</p>
+
+    <div class="warning-box">
+        <strong> Critical Safety Notice:</strong> This manual contains operational procedures that must be followed exactly as written. Deviation from prescribed procedures may result in reactor exploding once again, equipment damage, or radiological release. All operators must be certified and current on training before accessing control systems.
+    </div>
+
+    <div class="toc">
+        <div class="toc-title">Contents</div>
+        <ul>
+            <li>1. Control Rod System (SUZ)</li>
+            <li>2. SKALA Computer System</li>
+            <li>3. Reactor Protection Systems</li>
+            <li>4. Operating Procedures</li>
+            <li>5. Emergency Operations</li>
+            <li>6. Instrumentation & Monitoring</li>
+            <li>7. Power Distribution Control</li>
+            <li>8. System Interlocks</li>
+        </ul>
+    </div>
+
+    <div class="clear"></div>
+
+    <h2>1. Control Rod System (SUZ)</h2>
+
+    <h3>1.1 Control Rod Classification</h3>
+
+    <p>The RBMK reactor employs 211 control rods divided into functional groups<!--citation:2-->:</p>
+
+    <table class="wikitable">
+        <tr>
+            <th>Type</th>
+            <th>Designation</th>
+            <th>Quantity</th>
+            <th>Function</th>
+            <th>Speed (cm/s)</th>
+            <th>Color Code</th>
+        </tr>
+        <tr>
+            <td><strong>Manual Control</strong></td>
+            <td>RR (PP)</td>
+            <td>139</td>
+            <td>Manual reactivity control</td>
+            <td class="center">40</td>
+            <td style="background:#90EE90;">Green</td>
+        </tr>
+        <tr>
+            <td><strong>Automatic Regulators</strong></td>
+            <td>AR (AP)</td>
+            <td>12</td>
+            <td>Automatic power regulation</td>
+            <td class="center">40</td>
+            <td style="background:#FFB6C1;">Red</td>
+        </tr>
+        <tr>
+            <td><strong>Local Automatic</strong></td>
+            <td>LAR (ЛАР)</td>
+            <td>12</td>
+            <td>Local power density control</td>
+            <td class="center">40</td>
+            <td style="background:#FFD700;">Yellow</td>
+        </tr>
+        <tr>
+            <td><strong>Local Emergency</strong></td>
+            <td>LAZ (ЛАЗ)</td>
+            <td>24</td>
+            <td>Local emergency protection</td>
+            <td class="center">40</td>
+            <td style="background:#87CEEB;">Blue</td>
+        </tr>
+        <tr>
+            <td><strong>Shortened Absorbers</strong></td>
+            <td>USP (УСП)</td>
+            <td>24</td>
+            <td>Axial flux shaping</td>
+            <td class="center">40</td>
+            <td style="background:#DDA0DD;">Purple</td>
+        </tr>
+    </table>
+
+    <h3>1.2 Control Rod Drive Mechanisms</h3>
+
+    <h4>Servo Drive Specifications</h4>
+    <ul>
+        <li><strong>Motor Type:</strong> Three-phase asynchronous, 2.2 kW</li>
+        <li><strong>Gear Reduction:</strong> 1:9800 ratio</li>
+        <li><strong>Linear Speed:</strong> 0.4 m/s (40 cm/s)</li>
+        <li><strong>Position Accuracy:</strong> ±2 cm</li>
+        <li><strong>Clutch System:</strong> Electromagnetic with manual release</li>
+        <li><strong>Cooling:</strong> Water-cooled bearing assembly at 45-60°C</li>
+    </ul>
+
+    <h4>Rod Construction</h4>
+    <p>Each control rod assembly consists of<!--citation:3-->:</p>
+    <ul>
+        <li><strong>Absorber Section:</strong> Boron carbide (B₄C) in aluminum alloy tubes</li>
+        <li><strong>Length:</strong> 7 meters active absorber</li>
+        <li><strong>Displacer:</strong> Graphite follower, 4.5 meters (pre-1986 design)</li>
+        <li><strong>Telescopic Connection:</strong> Water-filled aluminum extension</li>
+        <li><strong>Total Travel:</strong> 7 meters operational range</li>
+    </ul>
+
+    <div class="panel-diagram">
+CONTROL ROD ASSEMBLY DIAGRAM:
+
+adding images is hard so heres an ascii version
+
+     TOP (Parked Position)
+    ╔══════════════╗
+    ║   COUPLING   ║ ← Drive mechanism connection
+    ╠══════════════╣
+    ║              ║
+    ║   ABSORBER   ║ ← Boron carbide (B₄C)
+    ║    SECTION   ║   Length: 7.0 m
+    ║   (ACTIVE)   ║   Diameter: 70 mm
+    ║              ║
+    ╠══════════════╣
+    ║  TELESCOPIC  ║ ← Water-filled aluminum
+    ║   SECTION    ║   Length: 1.25 m
+    ╠══════════════╣
+    ║              ║
+    ║   GRAPHITE   ║ ← Displacer section
+    ║   FOLLOWER   ║   Length: 4.5 m
+    ║              ║   (Creates water column
+    ║              ║    when withdrawn)
+    ╚══════════════╝
+     BOTTOM
+    
+    Movement Range: 0-700 cm
+    </div>
+
+    <h3>1.3 Control Rod Grouping and Logic</h3>
+
+    <h4>Operational Groups</h4>
+
+    <p>Control rods are organized into operational groups for coordinated movement<!--citation:4-->:</p>
+
+    <table class="wikitable">
+        <tr>
+            <th>Group</th>
+            <th>Rods Included</th>
+            <th>Purpose</th>
+            <th>Typical Operation</th>
+        </tr>
+        <tr>
+            <td><strong>Group 1</strong></td>
+            <td>12 AR rods</td>
+            <td>Primary automatic control</td>
+            <td>Continuous adjustment ±50 cm</td>
+        </tr>
+        <tr>
+            <td><strong>Group 2</strong></td>
+            <td>12 LAR rods</td>
+            <td>Local power trimming</td>
+            <td>Periodic adjustment</td>
+        </tr>
+        <tr>
+            <td><strong>Group 3</strong></td>
+            <td>Selected RR rods</td>
+            <td>Bulk reactivity control</td>
+            <td>Moved in banks of 6-12</td>
+        </tr>
+        <tr>
+            <td><strong>Emergency</strong></td>
+            <td>All 211 rods</td>
+            <td>AZ-5 scram</td>
+            <td>Simultaneous insertion</td>
+        </tr>
+    </table>
+
+    <h2>2. SKALA Computer System</h2>
+
+    <h3>2.1 System Architecture</h3>
+
+    <p>SKALA (System of Centralized Control of Aggregate Equipment) is the primary process computer<!--citation:5-->:</p>
+
+    <h4>Hardware Configuration</h4>
+    <ul>
+        <li><strong>Main Processors:</strong> Two redundant BESM-4M computers</li>
+        <li><strong>Memory:</strong> 16K words magnetic core (48-bit words)</li>
+        <li><strong>Storage:</strong> Magnetic drum, 256K words</li>
+        <li><strong>Input Channels:</strong> 4,096 analog, 2,048 digital</li>
+        <li><strong>Scan Rate:</strong> Full system scan every 1-2 seconds</li>
+        <li><strong>Calculation Cycle:</strong> Complete core analysis every 7-10 minutes</li>
+    </ul>
+
+    <h4>Primary Functions</h4>
+    <ol>
+        <li><strong>Data Acquisition:</strong> Continuous monitoring of all sensors</li>
+        <li><strong>Core Calculations:</strong> 3D neutron flux distribution</li>
+        <li><strong>Reactivity Balance:</strong> ORM calculation and tracking</li>
+        <li><strong>Alarm Processing:</strong> Priority-based alarm management</li>
+        <li><strong>Historical Recording:</strong> Parameter trending and logging</li>
+        <li><strong>Operator Advisories:</strong> Recommended control actions</li>
+    </ol>
+
+    <h3>2.2 SKALA Programs and Codes</h3>
+
+    <div class="code-block">
+COMMON SKALA REQUEST CODES:
+
+PRIZM   - 3D power distribution map
+SKAZKA  - Control rod positions and worth
+ORM     - Operational reactivity margin
+POTOK   - Channel flow rates
+TEMPER  - Temperature distribution
+DAVLEN  - Pressure monitoring
+TOPLIVO - Fuel burnup status
+ISTORIA - Historical data retrieval
+AVARIA  - Emergency parameter dump
+PROGNOZ - Predictive calculations
+    </div>
+
+    <h3>2.3 Core Monitoring Algorithms</h3>
+
+    <h4>Power Distribution Calculation</h4>
+    <p>SKALA performs real-time 3D neutron flux calculations<!--citation:6-->:</p>
+
+    <div class="panel-diagram">
+RADIAL-AXIAL POWER DISTRIBUTION:
+
+again, cant add images.
+
+Height  Relative Power (%)
+(m)     60  70  80  90  100 110 120
+7.0     |---|---|---|---|-●-|---|---|  Top
+6.0     |---|---|---|-●-|---|---|---|
+5.0     |---|---|-●-|---|---|---|---|
+4.0     |---|-●-|---|---|---|---|---|  ← Peak power region
+3.0     |---|-●-|---|---|---|---|---|
+2.0     |---|---|-●-|---|---|---|---|
+1.0     |---|---|---|-●-|---|---|---|
+0.0     |---|---|---|---|-●-|---|---|  Bottom
+
+        Radial zones: Central → Peripheral
+        Kr = 1.35 (radial peaking factor)
+        Kz = 1.48 (axial peaking factor)
+    </div>
+
+    <h2>3. Reactor Protection Systems</h2>
+
+    <h3>3.1 Emergency Protection (AZ) System</h3>
+
+    <p>The AZ (Avariynya Zashchita - Emergency Protection) system provides multiple levels of reactor shutdown<!--citation:7-->:</p>
+
+    <table class="wikitable">
+        <tr>
+            <th>Protection Level</th>
+            <th>Designation</th>
+            <th>Activation</th>
+            <th>Rods Inserted</th>
+            <th>Speed</th>
+        </tr>
+        <tr>
+            <td><strong>AZ-1</strong></td>
+            <td>Preventive Protection</td>
+            <td>Power excursion >10%</td>
+            <td>24 rods</td>
+            <td>Normal (40 cm/s)</td>
+        </tr>
+        <tr>
+            <td><strong>AZ-2</strong></td>
+            <td>Fast Runback</td>
+            <td>Equipment failure</td>
+            <td>48 rods</td>
+            <td>Normal</td>
+        </tr>
+        <tr>
+            <td><strong>AZ-3</strong></td>
+            <td>Power Reduction</td>
+            <td>Turbine trip</td>
+            <td>96 rods</td>
+            <td>Normal</td>
+        </tr>
+        <tr>
+            <td><strong>AZ-4</strong></td>
+            <td>Rapid Shutdown</td>
+            <td>Major malfunction</td>
+            <td>175 rods</td>
+            <td>Normal</td>
+        </tr>
+        <tr>
+            <td><strong>AZ-5</strong></td>
+            <td>Emergency Scram</td>
+            <td>Manual/Auto trip</td>
+            <td>All 211 rods</td>
+            <td>Gravity fall after 2m</td>
+        </tr>
+    </table>
+
+    <h3>3.2 AZ-5 Activation Signals</h3>
+
+    <div class="danger-box">
+        <strong> AZ-5 SCRAM is initiated by ANY of the following conditions:</strong>
+    </div>
+
+    <ul>
+        <li><strong>Manual:</strong> Operator button (control room or local panels)</li>
+        <li><strong>Power Excursion:</strong> Period <3 seconds or power >120% nominal</li>
+        <li><strong>Pressure Loss:</strong> Drum separator pressure <5.0 MPa</li>
+        <li><strong>Flow Loss:</strong> MCP flow <80% with power >20%</li>
+        <li><strong>Level Upset:</strong> Drum separator level ±50mm from setpoint</li>
+        <li><strong>Seismic:</strong> Earthquake detection >6 on MSK scale</li>
+        <li><strong>Electrical:</strong> Complete loss of power to control systems</li>
+        <li><strong>ECCS Actuation:</strong> Emergency core cooling initiation</li>
+    </ul>
+
+    <h3>3.3 Power Reduction Systems</h3>
+
+    <h4>BAZ (Rapid Power Reduction)</h4>
+    <ul>
+        <li>Reduces power to 60% in 2-3 minutes</li>
+        <li>Activated on single turbine trip</li>
+        <li>Inserts predetermined rod groups</li>
+        <li>Maintains critical geometry</li>
+    </ul>
+
+    <h4>Local Automatic Zone (LAZ)</h4>
+    <ul>
+        <li>Protects against local power excursions</li>
+        <li>12 independent zones</li>
+        <li>2 LAZ rods per zone</li>
+        <li>Activation at 110% local power limit</li>
+    </ul>
+
+    <h2>4. Operating Procedures</h2>
+
+    <h3>4.1 Reactor Startup Procedure</h3>
+
+    <div class="procedure-box">
+        <strong> STANDARD COLD STARTUP SEQUENCE</strong>
+    </div>
+
+    <ol>
+        <li><strong>Pre-Startup Checks (T-4 hours)</strong>
+            <ul>
+                <li>Verify all control rods fully inserted</li>
+                <li>Confirm MCP cooling water flow >1000 m³/h per pump</li>
+                <li>Check drum separator level at -200mm</li>
+                <li>Verify SKALA operational, no critical alarms</li>
+                <li>Confirm ventilation systems running</li>
+            </ul>
+        </li>
+        
+        <li><strong>Neutron Source Check (T-3 hours)</strong>
+            <ul>
+                <li>Insert startup neutron sources</li>
+                <li>Verify count rate >2 counts/second on all channels</li>
+                <li>Check source range instrumentation</li>
+            </ul>
+        </li>
+        
+        <li><strong>Rod Withdrawal Sequence (T-2 hours)</strong>
+            <ul>
+                <li>Withdraw USP rods to 3.5m</li>
+                <li>Withdraw peripheral RR rods in groups of 6</li>
+                <li>Monitor period meter, maintain >30 seconds</li>
+                <li>Achieve criticality at 0.001% power</li>
+            </ul>
+        </li>
+        
+        <li><strong>Power Ascension (T-0)</strong>
+            <ul>
+                <li>0.001% → 1%: Manual control, 1 decade/hour</li>
+                <li>1% → 10%: Switch to AR automatic control</li>
+                <li>10% → 30%: Heat up primary circuit to 260°C</li>
+                <li>30% → 100%: 1% per minute maximum rate</li>
+            </ul>
+        </li>
+    </ol>
+
+    <h3>4.2 Normal Power Operation</h3>
+
+    <h4>Operational Limits</h4>
+
+    <table class="wikitable">
+        <tr>
+            <th>Parameter</th>
+            <th>Normal Range</th>
+            <th>Alarm</th>
+            <th>Trip</th>
+        </tr>
+        <tr>
+            <td>Thermal Power</td>
+            <td>3000-3200 MW</td>
+            <td>3250 MW</td>
+            <td>3300 MW</td>
+        </tr>
+        <tr>
+            <td>Channel Power (max)</td>
+            <td>2.5-3.0 MW</td>
+            <td>3.1 MW</td>
+            <td>3.25 MW</td>
+        </tr>
+        <tr>
+            <td>Coolant Flow (total)</td>
+            <td>45000-48000 m³/h</td>
+            <td><44000 m³/h</td>
+            <td><40000 m³/h</td>
+        </tr>
+        <tr>
+            <td>Drum Pressure</td>
+            <td>6.8-7.0 MPa</td>
+            <td>7.2 / 6.5 MPa</td>
+            <td>7.5 / 5.0 MPa</td>
+        </tr>
+        <tr>
+            <td>Inlet Temperature</td>
+            <td>265-270°C</td>
+            <td>275°C</td>
+            <td>280°C</td>
+        </tr>
+        <tr>
+            <td>ORM (rod worth)</td>
+            <td>26-30 rods</td>
+            <td>20 rods</td>
+            <td>15 rods</td>
+        </tr>
+        <tr>
+            <td>Radial Peaking Kr</td>
+            <td>1.30-1.35</td>
+            <td>1.40</td>
+            <td>1.45</td>
+        </tr>
+    </table>
+
+    <h3>4.3 Xenon Transient Management</h3>
+
+    <p>Xenon-135 poisoning significantly affects reactor operation<!--citation:8-->:</p>
+
+    <h4>Xenon Oscillation Control</h4>
+    <div class="panel-diagram">
+XENON-135 CONCENTRATION vs TIME AFTER SHUTDOWN:
+
+Relative
+Xe-135
+  ^
+3.0|            ╱╲ ← Peak xenon (8-12 hours)
+2.5|          ╱    ╲   "Iodine pit"
+2.0|        ╱        ╲
+1.5|      ╱            ╲___
+1.0|____╱                   ╲_____ ← Decay to equilibrium
+0.5|                                
+  0|________________________________→ Time (hours)
+   0    4    8   12   16   20   24   30
+
+Operational Impact:
+- Loss of 30-40 rods worth of reactivity at peak
+- Restart prohibited 8-24 hours after scram
+- Spatial oscillations require active damping
+    </div>
+
+    <h2>5. Emergency Operations</h2>
+
+    <h3>5.1 Emergency Operating Procedures (EOPs)</h3>
+
+    <div class="danger-box">
+        <strong>IMMEDIATE OPERATOR ACTIONS - Memory Items</strong>
+    </div>
+
+    <h4>Loss of Coolant Flow</h4>
+    <ol>
+        <li><strong>VERIFY</strong> flow reduction on multiple indicators</li>
+        <li><strong>PRESS</strong> AZ-5 button immediately if flow <80%</li>
+        <li><strong>START</strong> backup MCPs within 30 seconds</li>
+        <li><strong>VERIFY</strong> ECCS actuation if flow not restored</li>
+        <li><strong>MONITOR</strong> channel outlet temperatures</li>
+    </ol>
+
+    <h4>Power Excursion Event</h4>
+    <ol>
+        <li><strong>OBSERVE</strong> period meter and power indicators</li>
+        <li><strong>INSERT</strong> manual rods if period <10 seconds</li>
+        <li><strong>PRESS</strong> AZ-5 if period <3 seconds</li>
+        <li><strong>VERIFY</strong> all rods inserting</li>
+        <li><strong>ANNOUNCE</strong> reactor scram on plant PA</li>
+    </ol>
+
+    <h3>5.2 Design Basis Accidents</h3>
+
+    <table class="wikitable">
+        <tr>
+            <th>Accident Type</th>
+            <th>Initiating Event</th>
+            <th>Automatic Response</th>
+            <th>Operator Actions</th>
+        </tr>
+        <tr>
+            <td><strong>Large Break LOCA</strong></td>
+            <td>900mm header rupture</td>
+            <td>AZ-5 + ECCS actuation</td>
+            <td>Verify ECCS, isolate break</td>
+        </tr>
+        <tr>
+            <td><strong>Flow Blockage</strong></td>
+            <td>Single channel obstruction</td>
+            <td>High temperature alarm</td>
+            <td>Reduce power, isolate channel</td>
+        </tr>
+        <tr>
+            <td><strong>Reactivity Insertion</strong></td>
+            <td>Control rod ejection</td>
+            <td>Power range trips</td>
+            <td>Manual scram if needed</td>
+        </tr>
+        <tr>
+            <td><strong>Loss of Heat Sink</strong></td>
+            <td>Turbine trip + bypass failure</td>
+            <td>AZ-3 power reduction</td>
+            <td>Open relief valves</td>
+        </tr>
+        <tr>
+            <td><strong>Station Blackout</strong></td>
+            <td>Loss of all AC power</td>
+            <td>Gravity rod drop</td>
+            <td>Start diesel generators</td>
+        </tr>
+    </table>
+
+    <h2>6. Instrumentation and Monitoring</h2>
+
+    <h3>6.1 Nuclear Instrumentation</h3>
+
+    <h4>Neutron Detection Systems</h4>
+
+    <table class="wikitable">
+        <tr>
+            <th>Range</th>
+            <th>Detector Type</th>
+            <th>Quantity</th>
+            <th>Location</th>
+            <th>Power Range</th>
+        </tr>
+        <tr>
+            <td><strong>Source Range</strong></td>
+            <td>BF₃ proportional</td>
+            <td>8</td>
+            <td>Reflector</td>
+            <td>10⁻⁹ - 10⁻³%</td>
+        </tr>
+        <tr>
+            <td><strong>Intermediate</strong></td>
+            <td>Compensated ion chamber</td>
+            <td>8</td>
+            <td>Reflector</td>
+            <td>10⁻⁶ - 10%</td>
+        </tr>
+        <tr>
+            <td><strong>Power Range</strong></td>
+            <td>Uncompensated ion chamber</td>
+            <td>12</td>
+            <td>Core periphery</td>
+            <td>1 - 120%</td>
+        </tr>
+        <tr>
+            <td><strong>In-Core</strong></td>
+            <td>Direct charge (DC)</td>
+            <td>130</td>
+            <td>Radial positions</td>
+            <td>5 - 120%</td>
+        </tr>
+        <tr>
+            <td><strong>Axial</strong></td>
+            <td>7-point ion chambers</td>
+            <td>12</td>
+            <td>Special channels</td>
+            <td>10 - 120%</td>
+        </tr>
+    </table>
+
+    <h3>6.2 Process Instrumentation</h3>
+
+    <h4>Temperature Monitoring</h4>
+    <ul>
+        <li><strong>Fuel Channel Outlet:</strong> 1,661 thermocouples (one per channel)</li>
+        <li><strong>Graphite Stack:</strong> 360 thermocouples in moderator</li>
+        <li><strong>Structural:</strong> 180 points on vessels and supports</li>
+        <li><strong>Control Rod Channels:</strong> 211 outlet temperatures</li>
+    </ul>
+
+    <h4>Flow Measurement</h4>
+    <ul>
+        <li><strong>Individual Channels:</strong> Ball flowmeters on 185 channels</li>
+        <li><strong>Group Distribution:</strong> 44 group flow measurements</li>
+        <li><strong>Total Flow:</strong> Venturi meters on main headers</li>
+        <li><strong>MCP Performance:</strong> Differential pressure across pumps</li>
+    </ul>
+
+    <h3>6.3 Radiation Monitoring</h3>
+
+    <div class="info-box">
+        <strong>ℹ️ Radiation Detection Systems</strong>
+    </div>
+
+    <table class="wikitable">
+        <tr>
+            <th>System</th>
+            <th>Purpose</th>
+            <th>Alarm Level</th>
+            <th>Action</th>
+        </tr>
+        <tr>
+            <td>KGO Circuit Monitor</td>
+            <td>Fission product detection</td>
+            <td>10x background</td>
+            <td>Identify failed fuel</td>
+        </tr>
+        <tr>
+            <td>Stack Monitors</td>
+            <td>Effluent release</td>
+            <td>10⁶ Bq/m³</td>
+            <td>Isolate ventilation</td>
+        </tr>
+        <tr>
+            <td>Area Monitors</td>
+            <td>Personnel protection</td>
+            <td>25 µSv/h</td>
+            <td>Evacuate area</td>
+        </tr>
+        <tr>
+            <td>Coolant Activity</td>
+            <td>Primary circuit integrity</td>
+            <td>3.7×10⁴ Bq/L</td>
+            <td>Locate leaking channel</td>
+        </tr>
+    </table>
+
+    <h2>7. Power Distribution Control</h2>
+
+    <h3>7.1 Local Automatic Regulation (LAR)</h3>
+
+    <p>The LAR system maintains uniform power distribution across the core<!--citation:9-->:</p>
+
+    <h4>Control Algorithm</h4>
+    <div class="panel-diagram">
+LAR CONTROL ZONES (Top View of Core):
+
+         Zone 1    Zone 2    Zone 3
+      ╭─────────┬─────────┬─────────╮
+   4  │    A    │    B    │    C    │  5
+      │  LAR-1  │  LAR-3  │  LAR-5  │
+      ├─────────┼─────────┼─────────┤
+   6  │    D    │  CENTER │    E    │  7
+      │  LAR-7  │  LAR-9  │  LAR-11 │
+      ├─────────┼─────────┼─────────┤
+   8  │    F    │    G    │    H    │  9
+      │  LAR-2  │  LAR-4  │  LAR-6  │
+      ╰─────────┴─────────┴─────────╯
+        Zone 10   Zone 11   Zone 12
+
+Each zone contains:
+- 2 LAR control rods
+- 10-15 power detectors
+- Independent control loop
+- ±10% power adjustment range
+    </div>
+
+    <h3>7.2 Radial Power Flattening</h3>
+
+    <h4>Control Strategy</h4>
+    <ol>
+        <li><strong>Central Depression:</strong> Insert center rods to reduce peak</li>
+        <li><strong>Peripheral Enhancement:</strong> Withdraw edge rods</li>
+        <li><strong>Fresh Fuel Loading:</strong> Place in intermediate zones</li>
+        <li><strong>Burnup Compensation:</strong> Shuffle fuel inward over time</li>
+    </ol>
+
+    <h3>7.3 Axial Power Distribution</h3>
+
+    <h4>Offset Control Methods</h4>
+    <ul>
+        <li><strong>USP Rods:</strong> Control top/bottom power ratio</li>
+        <li><strong>Flow Distribution:</strong> Adjust channel throttling</li>
+        <li><strong>Partial Length Rods:</strong> Shape axial profile</li>
+        <li><strong>Coolant Temperature:</strong> Inlet temperature programming</li>
+    </ul>
+
+    <h2>8. System Interlocks and Permissives</h2>
+
+    <h3>8.1 Rod Control Interlocks</h3>
+
+    <div class="warning-box">
+        <strong>⚠️ Control Rod Movement Blocked Under These Conditions:</strong>
+    </div>
+
+    <table class="wikitable">
+        <tr>
+            <th>Interlock</th>
+            <th>Condition</th>
+            <th>Purpose</th>
+            <th>Override</th>
+        </tr>
+        <tr>
+            <td><strong>Low ORM</strong></td>
+            <td>ORM <15 rods</td>
+            <td>Maintain shutdown margin</td>
+            <td>Shift supervisor key</td>
+        </tr>
+        <tr>
+            <td><strong>High Power</strong></td>
+            <td>Power >103%</td>
+            <td>Prevent overpower</td>
+            <td>None</td>
+        </tr>
+        <tr>
+            <td><strong>Period Protection</strong></td>
+            <td>Period <10 sec</td>
+            <td>Limit reactivity rate</td>
+            <td>None</td>
+        </tr>
+        <tr>
+            <td><strong>Rod Group Limit</strong></td>
+            <td>>12 rods selected</td>
+            <td>Prevent large reactivity addition</td>
+            <td>None</td>
+        </tr>
+        <tr>
+            <td><strong>Asymmetry</strong></td>
+            <td>Tilt >1.1</td>
+            <td>Maintain symmetric power</td>
+            <td>Manual only</td>
+        </tr>
+        <tr>
+            <td><strong>Low Flow</strong></td>
+            <td>Flow <90%</td>
+            <td>Prevent CHF</td>
+            <td>None</td>
+        </tr>
+    </table>
+
+    <h3>8.2 MCP Start Permissives</h3>
+
+    <p>Main Circulation Pumps cannot start unless<!--citation:10-->:</p>
+    <ul>
+        <li>Reactor power <20% (prevents flow instability)</li>
+        <li>Drum separator level normal (-600 to +100mm)</li>
+        <li>Suction valve fully open</li>
+        <li>Discharge valve closed (opens after start)</li>
+        <li>Seal water pressure >0.2 MPa above system</li>
+        <li>Bearing oil flow confirmed</li>
+        <li>No electrical faults detected</li>
+    </ul>
+
+    <h3>8.3 Turbine Trip Logic</h3>
+
+    <div class="panel-diagram">
+TURBINE TRIP → REACTOR RESPONSE LOGIC:
+
+Single Turbine Trip (1 of 2):
+├─→ If Power >60%: BAZ (rapid reduction to 60%)
+├─→ If Power <60%: No automatic action
+└─→ Operator reduces power manually
+
+Both Turbines Trip:
+├─→ If Power >20%: AZ-3 (scram to hot standby)
+├─→ If Bypass Available: Maintain 5-10% power
+└─→ If No Bypass: AZ-5 (full scram)
+
+Additional Trips:
+- Condenser vacuum <500 mm Hg
+- Generator electrical fault
+- Turbine overspeed >3300 RPM
+- Bearing vibration >100 µm
+    </div>
+
+    <h2>Technical Specifications Summary</h2>
+
+    <h3>Limiting Conditions for Operation (LCOs)</h3>
+
+    <table class="wikitable"> 
+        <tr>
+            <th>System/Parameter</th>
+            <th>LCO Requirement</th>
+            <th>Action if Not Met</th>
+            <th>Time Limit</th>
+        </tr>
+        <tr>
+            <td>ORM</td>
+            <td>≥15 rods equivalent</td>
+            <td>Insert rods or reduce power</td>
+            <td>Immediate</td>
+        </tr>
+        <tr>
+            <td>Operable Control Rods</td>
+            <td>≥195 of 211</td>
+            <td>Shutdown if <190</td>
+            <td>24 hours</td>
+        </tr>
+        <tr>
+            <td>MCP Operation</td>
+            <td>≥6 of 8 running</td>
+            <td>Reduce power proportionally</td>
+            <td>30 minutes</td>
+        </tr>
+        <tr>
+            <td>ECCS Trains</td>
+            <td>3 of 3 available</td>
+            <td>Shutdown if <2</td>
+            <td>72 hours</td>
+        </tr>
+        <tr>
+            <td>Nuclear Instruments</td>
+            <td>2 per range minimum</td>
+            <td>Repair or shutdown</td>
+            <td>48 hours</td>
+        </tr>
+        <tr>
+            <td>SKALA Computer</td>
+            <td>1 of 2 operational</td>
+            <td>Manual monitoring required</td>
+            <td>7 days</td>
+        </tr>
+        <tr>
+            <td>Containment Integrity</td>
+            <td>All penetrations sealed</td>
+            <td>Immediate shutdown</td>
+            <td>1 hour</td>
+        </tr>
+    </table>
+
+    <h2>Appendices</h2>
+
+    <h3>A. Control Room Alarm Response</h3>
+
+    <div class="info-box">
+        <strong>ℹ️ Alarm Priority Classification</strong>
+    </div>
+
+    <ul>
+        <li><strong style="color:red;">Priority 1 (Red):</strong> Immediate operator action required</li>
+        <li><strong style="color:orange;">Priority 2 (Amber):</strong> Action within 10 minutes</li>
+        <li><strong style="color:yellow;">Priority 3 (Yellow):</strong> Action within 1 hour</li>
+        <li><strong style="color:black;">Priority 4 (White):</strong> Information only</li>
+    </ul>
+
+    <h3>B. Shift Crew Composition</h3>
+
+    <table class="wikitable">
+        <tr>
+            <th>Position</th>
+            <th>Quantity</th>
+            <th>Qualification</th>
+            <th>Primary Responsibility</th>
+        </tr>
+        <tr>
+            <td>Shift Supervisor</td>
+            <td>1</td>
+            <td>Senior Reactor Operator</td>
+            <td>Overall plant command</td>
+        </tr>
+        <tr>
+            <td>Unit Shift Supervisor</td>
+            <td>1</td>
+            <td>Senior Reactor Operator</td>
+            <td>Reactor unit operations</td>
+        </tr>
+        <tr>
+            <td>Senior Reactor Control Engineer</td>
+            <td>1</td>
+            <td>Reactor Operator</td>
+            <td>Reactor control panel</td>
+        </tr>
+        <tr>
+            <td>Senior Turbine Control Engineer</td>
+            <td>1</td>
+            <td>Turbine Operator</td>
+            <td>Turbine operations</td>
+        </tr>
+        <tr>
+            <td>Reactor Control Engineer</td>
+            <td>2</td>
+            <td>Reactor Operator</td>
+            <td>System monitoring</td>
+        </tr>
+        <tr>
+            <td>Equipment Operators</td>
+            <td>8-12</td>
+            <td>Equipment Operator</td>
+            <td>Field operations</td>
+        </tr>
+    </table>
+
+    <h3>C. References and Further Reading</h3>
+
+    <ul>
+        <li>INSAG-7: The Chernobyl Accident - Updating of INSAG-1 (1992)</li>
+        <li>Abagyan, A.A. et al., "The Chernobyl Accident: Updating of INSAG-1" (1991)</li>
+        <li>Dollezhal, N.A., Yemelyanov, I.Y., "Channel-Type Nuclear Energy Reactor" (1980)</li>
+        <li>NIKIET, "RBMK-1000 Technical Description" (1975)</li>
+        <li>Regulatory Document OPB-82: "General Safety Provisions for Nuclear Power Plants"</li>
+    </ul>
+
+    <h2>See Also</h2>
+    <ul>
+        <li><a href="index.html">← Return to RBMK Unit 3 Main Page</a></li>
+        <li><a href="https://en.wikipedia.org/wiki/RBMK">RBMK Reactor Design</a></li>
+        <li><a href="https://en.wikipedia.org/wiki/Nuclear_reactor_physics">Nuclear Reactor Physics</a></li>
+        <li><a href="https://en.wikipedia.org/wiki/Control_rod">Control Rod Technology</a></li>
+        <li><a href="emergency-procedures.html">Emergency Procedures Manual</a></li>
+        <li><a href="maintenance-manual.html">Maintenance and Testing Procedures</a></li>
+    </ul>
+
+    <div class="warning-box" style="margin-top: 3em;">
+        <strong>⚠️ Disclaimer:</strong> This manual is for educational and historical reference only. It should not be used for actual reactor operations. All nuclear reactor operations must be conducted by licensed operators following approved procedures specific to each facility. The information presented here is based on publicly available technical documentation and may not reflect current safety standards or modifications.
+    </div>
+
+</div>
+
+<!-- Lightbox overlay (hidden by default) -->
+<div class="lightbox-overlay" id="lightbox">
+    <div class="lightbox-content">
+        <span class="lightbox-close" id="lightbox-close">&times;</span>
+        <img id="lightbox-img" src="" alt="">
+    </div>
+</div>
+
+<script>
+    // Get all images with class="lightbox"
+    const images = document.querySelectorAll('.lightbox');
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    const lightboxClose = document.getElementById('lightbox-close');
+
+    // When an image is clicked, show it in the lightbox
+    images.forEach(img => {
+        img.addEventListener('click', function() {
+            lightboxImg.src = this.src;
+            lightboxImg.alt = this.alt;
+            lightbox.classList.add('show');
+        });
+    });
+
+    // Close the lightbox when the X or overlay is clicked
+    lightboxClose.addEventListener('click', function() {
+        lightbox.classList.remove('show');
+    });
+    lightbox.addEventListener('click', function(e) {
+        if (e.target === lightbox) {
+            lightbox.classList.remove('show');
+        }
+    });
+
+    // Add smooth scrolling for any future anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
+</script>
+</body>
+</html>
