@@ -1,0 +1,1098 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>RBMK Emergency Operating Procedures Manual - Wikipedia</title>
+    <style>
+        body {
+            font-family: 'Linux Libertine', 'Georgia', serif;
+            background: #f8f9fa;
+            color: #202122;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 40px auto;
+            background: #fff;
+            border: 1px solid #a2a9b1;
+            padding: 32px;
+            box-shadow: 0 0 10px #ccc;
+        }
+        h1 {
+            font-size: 2.2em;
+            border-bottom: 1px solid #a2a9b1;
+            margin-bottom: 0.5em;
+        }
+        h2 {
+            font-size: 1.5em;
+            border-bottom: 1px solid #a2a9b1;
+            margin-top: 2em;
+            margin-bottom: 0.5em;
+        }
+        h3 {
+            font-size: 1.2em;
+            margin-top: 1.5em;
+            margin-bottom: 0.5em;
+        }
+        h4 {
+            font-size: 1.1em;
+            margin-top: 1em;
+            margin-bottom: 0.5em;
+            font-weight: bold;
+        }
+        .infobox {
+            float: right;
+            width: 300px;
+            margin: 0 0 1em 2em;
+            background: #f8f9fa;
+            border: 1px solid #a2a9b1;
+            padding: 8px;
+            font-size: 0.95em;
+        }
+        .infobox th {
+            background: #eaecf0;
+            padding: 4px;
+            text-align: left;
+        }
+        .infobox td {
+            padding: 4px;
+        }
+        .wikitable {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 1em 0;
+        }
+        .wikitable th, .wikitable td {
+            border: 1px solid #a2a9b1;
+            padding: 6px;
+            text-align: left;
+        }
+        .wikitable th {
+            background: #eaecf0;
+            text-align: center;
+        }
+        .wikitable td.center {
+            text-align: center;
+        }
+        .thumb {
+            margin: 1em 0;
+            text-align: center;
+        }
+        .thumb img {
+            max-width: 100%;
+            border: 1px solid #a2a9b1;
+            background: #fff;
+            cursor: pointer;
+        }
+        .thumbcaption {
+            font-size: 0.95em;
+            color: #555;
+            margin-top: 0.2em;
+        }
+        ul {
+            margin: 0.5em 0 0.5em 1.5em;
+        }
+        ol {
+            margin: 0.5em 0 0.5em 1.5em;
+        }
+        a {
+            color: #0645ad;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .clear {
+            clear: both;
+        }
+        .warning-box {
+            background: #fff8dc;
+            border: 2px solid #ff9800;
+            padding: 10px;
+            margin: 1em 0;
+            border-radius: 5px;
+        }
+        .danger-box {
+            background: #ffe4e1;
+            border: 2px solid #ff0000;
+            padding: 10px;
+            margin: 1em 0;
+            border-radius: 5px;
+        }
+        .info-box {
+            background: #e8f4ff;
+            border: 2px solid #0066cc;
+            padding: 10px;
+            margin: 1em 0;
+            border-radius: 5px;
+        }
+        .panel-diagram {
+            background: #f0f0f0;
+            border: 1px solid #ccc;
+            padding: 15px;
+            margin: 1em 0;
+            font-family: 'Courier New', monospace;
+            white-space: pre;
+            overflow-x: auto;
+            font-size: 0.9em;
+        }
+        .code-block {
+            background: #f8f8f8;
+            border: 1px solid #ddd;
+            padding: 10px;
+            margin: 1em 0;
+            font-family: 'Courier New', monospace;
+            font-size: 0.95em;
+        }
+        .procedure-box {
+            background: #f0f8ff;
+            border-left: 4px solid #0066cc;
+            padding: 10px;
+            margin: 1em 0;
+        }
+        .toc {
+            background: #f8f9fa;
+            border: 1px solid #a2a9b1;
+            padding: 10px;
+            display: inline-block;
+            margin: 1em 0;
+        }
+        .toc-title {
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 0.5em;
+        }
+        .toc ul {
+            margin: 0.2em 0 0.2em 1em;
+        }
+        .toc li {
+            margin: 0.2em 0;
+        }
+        .checklist {
+            background: #f0f8f0;
+            border: 1px solid #90ee90;
+            padding: 10px;
+            margin: 1em 0;
+        }
+        .checklist input[type="checkbox"] {
+            margin-right: 8px;
+        }
+        .emergency-tag {
+            display: inline-block;
+            padding: 2px 8px;
+            border-radius: 3px;
+            font-size: 0.85em;
+            margin: 0 2px;
+        }
+        .tag-immediate {
+            background: #ff0000;
+            color: white;
+        }
+        .tag-urgent {
+            background: #ff9800;
+            color: white;
+        }
+        .tag-caution {
+            background: #ffc107;
+            color: black;
+        }
+        .tag-alert {
+            background: #4caf50;
+            color: white;
+        }
+        .scram-button {
+            background: #ff0000;
+            color: white;
+            font-weight: bold;
+            font-size: 1.2em;
+            padding: 10px 20px;
+            border: 3px solid #cc0000;
+            border-radius: 5px;
+            display: inline-block;
+            margin: 10px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+        }
+        .lightbox-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 10000;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s;
+        }
+        .lightbox-overlay.show {
+            opacity: 1;
+            pointer-events: auto;
+        }
+        .lightbox-content {
+            position: relative;
+            max-width: 90%;
+            max-height: 90%;
+        }
+        .lightbox-content img {
+            max-width: 100%;
+            max-height: 80vh;
+            display: block;
+            margin: 0 auto;
+        }
+        .lightbox-close {
+            position: absolute;
+            top: -40px;
+            right: 0;
+            color: white;
+            font-size: 2em;
+            font-weight: bold;
+            cursor: pointer;
+            background: #444;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            line-height: 40px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>RBMK Emergency Operating Procedures Manual</h1>
+    
+    <table class="infobox">
+        <tr>
+            <th colspan="2" style="text-align:center;">RBMK Emergency Systems</th>
+        </tr>
+        <tr>
+            <td colspan="2" style="text-align:center;">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcReOEGqBOOlu3QgHptpnx00T006gGi-dtr7_A&s" alt="RBMK Control Room" style="width:100%;max-width:280px;" class="lightbox">
+                <div class="thumbcaption">RBMK reactor control room showing AZ-5 button location</div>
+            </td>
+        </tr>
+        <tr>
+            <th>Emergency Shutdown</th>
+            <td><span class="scram-button">AZ-5</span></td>
+        </tr>
+        <tr>
+            <th>Scram Time</th>
+            <td><cite index="4-1">12 seconds</cite></td>
+        </tr>
+        <tr>
+            <th>BAZ System</th>
+            <td><cite index="4-2">1.8-2.5 seconds</cite></td>
+        </tr>
+        <tr>
+            <th>Emergency Rods</th>
+            <td>24 BAZ rods</td>
+        </tr>
+        <tr>
+            <th>Min ORM Required</th>
+            <td><cite index="22-10">15 rods</cite></td>
+        </tr>
+        <tr>
+            <th>ECCS Response</th>
+            <td><2 seconds</td>
+        </tr>
+        <tr>
+            <th>Diesel Start Time</th>
+            <td><cite index="3-17">60-75 seconds</cite></td>
+        </tr>
+        <tr>
+            <th>Decay Heat</th>
+            <td><cite index="11-18">~5-6% after scram</cite></td>
+        </tr>
+    </table>
+
+    <p>The <strong>RBMK Emergency Operating Procedures Manual</strong> provides critical guidance for reactor operators during abnormal and emergency conditions. These procedures are designed to prevent reactor damage, ensure personnel safety, and minimize radiological releases during off-normal events. All operators must be thoroughly trained in these procedures and demonstrate proficiency through regular simulator exercises.</p>
+
+    <div class="danger-box">
+        <strong> CRITICAL WARNING:</strong> <cite index="1-12">AZ-5 (АЗ-5) is an abbreviation for "emergency protection of the 5th category"</cite>. Due to design characteristics, <cite index="1-3">scramming an RBMK reactor could raise reactivity to dangerous levels before lowering it</cite>. Post-1986 modifications have addressed this issue, but operators must remain aware of reactor dynamics during shutdown procedures.
+    </div>
+
+    <div class="toc">
+        <div class="toc-title">Contents</div>
+        <ul>
+            <li>1. Emergency Classifications</li>
+            <li>2. Reactor SCRAM Procedures (AZ-5)</li>
+            <li>3. Loss of Coolant Accident (LOCA)</li>
+            <li>4. Power Excursion Response</li>
+            <li>5. Station Blackout</li>
+            <li>6. Xenon Poisoning Management</li>
+            <li>7. Graphite Fire Response</li>
+            <li>8. Radiation Emergency</li>
+            <li>9. Turbine Trip Response</li>
+            <li>10. Communication Protocols</li>
+        </ul>
+    </div>
+
+    <div class="clear"></div>
+
+    <h2>1. Emergency Classifications</h2>
+
+    <h3>1.1 Emergency Action Levels</h3>
+
+    <table class="wikitable">
+        <tr>
+            <th>Level</th>
+            <th>Classification</th>
+            <th>Criteria</th>
+            <th>Required Actions</th>
+            <th>Personnel Response</th>
+        </tr>
+        <tr>
+            <td class="center"><span class="emergency-tag tag-alert">ALERT</span></td>
+            <td>Unusual Event</td>
+            <td>• Minor equipment failure<br>• Single safety system degraded<br>• Abnormal rad levels</td>
+            <td>• Assess situation<br>• Notify shift supervisor<br>• Log in SKALA</td>
+            <td>• Operations crew only<br>• No evacuation</td>
+        </tr>
+        <tr>
+            <td class="center"><span class="emergency-tag tag-caution">CAUTION</span></td>
+            <td>Alert</td>
+            <td>• Multiple equipment failures<br>• Safety system failure<br>• ORM <26 rods</td>
+            <td>• Activate emergency team<br>• Notify plant management<br>• Prepare for shutdown</td>
+            <td>• Emergency team activated<br>• Standby for action</td>
+        </tr>
+        <tr>
+            <td class="center"><span class="emergency-tag tag-urgent">URGENT</span></td>
+            <td>Site Area Emergency</td>
+            <td>• Loss of 2+ safety functions<br>• <cite index="22-10">ORM <15 rods</cite><br>• Major LOCA</td>
+            <td>• Immediate AZ-5<br>• Activate ECCS<br>• Site assembly</td>
+            <td>• All emergency teams<br>• Non-essential evacuation</td>
+        </tr>
+        <tr>
+            <td class="center"><span class="emergency-tag tag-immediate">IMMEDIATE</span></td>
+            <td>General Emergency</td>
+            <td>• Core damage imminent<br>• Containment breach<br>• Uncontrolled excursion</td>
+            <td>• All emergency systems<br>• Off-site notification<br>• Public warning</td>
+            <td>• Site evacuation<br>• Public protection actions</td>
+        </tr>
+    </table>
+
+    <h3>1.2 Immediate Action Criteria</h3>
+
+    <p>The following conditions require IMMEDIATE reactor shutdown via AZ-5:</p>
+
+    <ul>
+        <li><strong>Reactivity Control:</strong> <cite index="22-10">ORM below 15 rods</cite></li>
+        <li><strong>Power Excursion:</strong> Reactor period <10 seconds</li>
+        <li><strong>Core Cooling:</strong> Loss of >50% cooling flow</li>
+        <li><strong>Pressure Boundary:</strong> Multiple fuel channel ruptures</li>
+        <li><strong>Instrumentation:</strong> Complete loss of nuclear instrumentation</li>
+        <li><strong>Seismic Event:</strong> Ground acceleration >0.1g</li>
+        <li><strong>Operator Judgment:</strong> Any condition threatening core integrity</li>
+    </ul>
+
+    <h2>2. Reactor SCRAM Procedures (AZ-5)</h2>
+
+    <h3>2.1 AZ-5 Emergency Shutdown System</h3>
+
+    <div class="info-box">
+        <strong> AZ-5 System Description</strong><br>
+        <cite index="2-1">The scram was started when the AZ-5 button of the reactor emergency protection system was pressed: this engaged the drive mechanism on all control rods to fully insert them, including the manual control rods that had been withdrawn earlier</cite>. Post-1986 modifications: <cite index="4-1">AZ-5 sequence reduced from 18 to 12 seconds</cite>.
+    </div>
+
+    <h3>2.2 AZ-5 Initiation Procedure</h3>
+
+    <div class="procedure-box">
+        <strong> IMMEDIATE ACTION - REACTOR SCRAM</strong>
+    </div>
+
+    <ol>
+        <li><strong>ANNOUNCE:</strong> "REACTOR SCRAM" over plant intercom</li>
+        
+        <li><strong>PRESS:</strong> AZ-5 button (red mushroom button on main panel)
+            <ul>
+                <li>Verify AZ-5 light illuminates</li>
+                <li>Confirm rod motion on SKALA display</li>
+                <li><cite index="2-11">Control rods move at 0.4 metres per second</cite></li>
+                <li>Monitor insertion time: should complete in <cite index="4-1">12 seconds</cite></li>
+            </ul>
+        </li>
+        
+        <li><strong>VERIFY:</strong> Automatic actions
+            <ul>
+                <li>All control rods inserting</li>
+                <li>Turbine trip occurs</li>
+                <li>Generator breaker opens</li>
+                <li>ECCS standby signal</li>
+            </ul>
+        </li>
+        
+        <li><strong>MONITOR:</strong> Reactor parameters
+            <ul>
+                <li>Power decreasing on all ranges</li>
+                <li>Period meter shows negative</li>
+                <li>Pressure stable or decreasing</li>
+                <li>Core flow maintained >30%</li>
+            </ul>
+        </li>
+    </ol>
+
+    <h3>2.3 BAZ Fast Shutdown System</h3>
+
+    <p>The <cite index="4-2">BAZ system (rapid reactor emergency protection) inserts 24 uniformly distributed rods into the reactor core via a modified drive mechanism within 1.8 to 2.5 seconds</cite>.</p>
+
+    <h4>BAZ Activation Criteria:</h4>
+    <ul>
+        <li>Power excursion with period <3 seconds</li>
+        <li>AZ-5 failure to initiate</li>
+        <li>Multiple control rod drive failures</li>
+        <li>Severe pressure transient</li>
+    </ul>
+
+    <h3>2.4 Post-SCRAM Actions</h3>
+
+    <div class="checklist">
+        <strong>✓ POST-SCRAM VERIFICATION CHECKLIST</strong><br><br>
+        <input type="checkbox"> All rods fully inserted (check SKALA display)<br>
+        <input type="checkbox"> Reactor power <1% and decreasing<br>
+        <input type="checkbox"> <cite index="1-8">~7% decay heat generation verified</cite><br>
+        <input type="checkbox"> Primary circulation maintained (minimum 2 MCPs running)<br>
+        <input type="checkbox"> Steam dump to condenser or atmosphere<br>
+        <input type="checkbox"> Electrical loads transferred to off-site power<br>
+        <input type="checkbox"> Emergency diesels running and loaded<br>
+        <input type="checkbox"> Radiation monitors normal<br>
+        <input type="checkbox"> Personnel accountability complete<br>
+        <input type="checkbox"> Regulatory notifications made<br>
+    </div>
+
+    <h2>3. Loss of Coolant Accident (LOCA) Response</h2>
+
+    <h3>3.1 LOCA Recognition</h3>
+
+    <p><cite index="11-13,11-14">A loss-of-coolant accident (LOCA) is a mode of failure for a nuclear reactor; if not managed effectively, the results of a LOCA could result in reactor core damage. Each nuclear plant's emergency core cooling system (ECCS) exists specifically to deal with a LOCA</cite>.</p>
+
+    <h4>LOCA Indicators:</h4>
+    <ul>
+        <li>Rapid decrease in primary system pressure</li>
+        <li>Drum separator level decreasing uncontrollably</li>
+        <li>Increased humidity in reactor spaces</li>
+        <li>High radiation alarms in reactor building</li>
+        <li>Acoustic monitors indicate pipe break</li>
+        <li>Mismatch between MCP flow and core flow</li>
+    </ul>
+
+    <h3>3.2 Large Break LOCA Response</h3>
+
+    <div class="danger-box">
+        <strong> CRITICAL:</strong> For RBMK reactors, <cite index="18-15">the consequences of rupture of more than 11-16 fuel channels at full pressure would be close to the consequences of Chernobyl accident</cite>.
+    </div>
+
+    <table class="wikitable">
+        <tr>
+            <th>Time</th>
+            <th>Automatic Actions</th>
+            <th>Operator Actions</th>
+            <th>Key Parameters</th>
+        </tr>
+        <tr>
+            <td>0-2 sec</td>
+            <td>• Low pressure scram<br>• ECCS actuation<br>• Turbine trip</td>
+            <td>• Verify AZ-5 actuation<br>• Announce emergency</td>
+            <td>• Pressure <6.0 MPa<br>• Flow reversal likely</td>
+        </tr>
+        <tr>
+            <td>2-30 sec</td>
+            <td>• ECCS pumps start<br>• Diesel generators start<br>• Isolation valves close</td>
+            <td>• Verify ECCS flow<br>• Monitor core cooling<br>• Start additional MCPs</td>
+            <td>• ECCS flow >1100 m³/hr<br>• Core ΔT <100°C</td>
+        </tr>
+        <tr>
+            <td>30-60 sec</td>
+            <td>• <cite index="19-10">Diesels at full load</cite><br>• Accumulator injection</td>
+            <td>• Align backup systems<br>• Depressurize intact loops</td>
+            <td>• Pressure <4.0 MPa<br>• Zone cooling verified</td>
+        </tr>
+        <tr>
+            <td>1-10 min</td>
+            <td>• Long-term cooling mode<br>• Hydrogen control active</td>
+            <td>• Establish feed & bleed<br>• Monitor fuel temperatures</td>
+            <td>• Fuel clad <1200°C<br>• H₂ <4%</td>
+        </tr>
+    </table>
+
+    <h3>3.3 Control Rod Cooling Circuit Strategy</h3>
+
+    <p><cite index="13-3,13-4,13-5">The channels with control rods are cooled with water supplied by the system totally independent from the reactor cooling system. The heat from fuel channels, where heat is generated, through graphite columns is transferred in radial direction to cooled channels with control rods. Therefore, the heat removal from RBMK-1500 reactor core using control rods cooling circuit can be used as non-regular mean for reactor cool-down</cite>.</p>
+
+    <h2>4. Power Excursion Response</h2>
+
+    <h3>4.1 Positive Reactivity Insertion</h3>
+
+    <div class="warning-box">
+        <strong> WARNING - Positive Void Coefficient:</strong> <cite index="24-11,24-12,24-16">The RBMK reactor possesses a "positive void coefficient". If power increases or flow decreases, there is increased steam production in the fuel channels, so neutrons that would have been absorbed by water will produce increased fission. At power <20% maximum, the positive void coefficient effect is dominant and the reactor becomes unstable</cite>.
+    </div>
+
+    <h3>4.2 Power Excursion Recognition</h3>
+
+    <div class="panel-diagram">
+POWER EXCURSION INDICATORS:
+
+Reactor Period Meter:        Nuclear Power:           Core Parameters:
+┌─────────────────┐         ┌──────────────┐        ┌─────────────────┐
+│  PERIOD (sec)   │         │  MW(thermal) │        │ Local Power     │
+│                 │         │              │        │                 │
+│     <10 ────────┼─ALARM──>│   >3200 ─────┼─ALARM─>│  Asymmetry >20% │
+│      ↑          │         │      ↑       │        │       ↑         │
+│   DECREASING    │         │  INCREASING  │        │   HOT SPOTS     │
+│                 │         │              │        │                 │
+│  <3 ─ AZ-5+BAZ  │         │ Rate >10%/s  │        │  ΔT >50°C local │
+└─────────────────┘         └──────────────┘        └─────────────────┘
+
+IMMEDIATE ACTIONS: Period <10 sec → Manual SCRAM
+                   Period <3 sec  → Automatic BAZ activation
+    </div>
+
+    <h3>4.3 Emergency Power Reduction</h3>
+
+    <ol>
+        <li><strong>If AZ-5 is NOT warranted (Period >30 seconds):</strong>
+            <ul>
+                <li>Insert control rods in symmetric pattern</li>
+                <li>Reduce recirculation flow by 25%</li>
+                <li>Increase feedwater flow to reduce voids</li>
+                <li>Open turbine bypass valves</li>
+            </ul>
+        </li>
+        
+        <li><strong>Monitor for stability:</strong>
+            <ul>
+                <li>Power oscillations <±5%</li>
+                <li>Xenon distribution symmetric</li>
+                <li>No local hot spots</li>
+            </ul>
+        </li>
+        
+        <li><strong>If instability persists:</strong>
+            <ul>
+                <li>Initiate controlled shutdown</li>
+                <li>Do NOT attempt rapid power changes</li>
+                <li>Monitor for xenon transients</li>
+            </ul>
+        </li>
+    </ol>
+
+    <h2>5. Station Blackout Response</h2>
+
+    <h3>5.1 Loss of All AC Power</h3>
+
+    <p><cite index="19-7,19-9,19-10">RBMK reactors use water as a coolant, circulated by electrically driven pumps. Reactor No. 4 had 1,661 individual fuel channels, requiring over 45 million litres of coolant per hour. In case of total power loss, backup diesel generators took 60-75 seconds to reach full load</cite>.</p>
+
+    <h3>5.2 Station Blackout Immediate Actions</h3>
+
+    <div class="procedure-box">
+        <strong> IMMEDIATE ACTIONS - STATION BLACKOUT</strong>
+    </div>
+
+    <ol>
+        <li><strong>VERIFY</strong> reactor scram (AZ-5 on loss of power)</li>
+        
+        <li><strong>CONFIRM</strong> diesel generator auto-start
+            <ul>
+                <li>All 3 diesels should start within 15 seconds</li>
+                <li><cite index="3-17">Full load capability in 60-75 seconds</cite></li>
+                <li>If diesels fail, initiate manual start</li>
+            </ul>
+        </li>
+        
+        <li><strong>MAINTAIN</strong> core cooling during transition
+            <ul>
+                <li><cite index="19-11">MCP inertial flow via counterweights</cite></li>
+                <li>Natural circulation if pumps coast down</li>
+                <li>Open atmospheric dump valves</li>
+            </ul>
+        </li>
+        
+        <li><strong>LOAD</strong> emergency buses sequentially
+            <ul>
+                <li>Priority 1: One MCP per loop (5.5 MW each)</li>
+                <li>Priority 2: ECCS pumps</li>
+                <li>Priority 3: Instrumentation and control</li>
+                <li>Priority 4: Emergency lighting and ventilation</li>
+            </ul>
+        </li>
+    </ol>
+
+    <h2>6. Xenon Poisoning Management</h2>
+
+    <h3>6.1 Understanding Xenon-135 Effects</h3>
+
+    <p><cite index="21-12,21-13,21-14,21-15">The iodine pit is a temporary disabling of a nuclear reactor due to buildup of 135Xe, mainly produced by beta decay of 135I. 135I is a weak neutron absorber, while 135Xe is the strongest known neutron absorber. When 135Xe builds up in the fuel rods, it significantly lowers their reactivity</cite>.</p>
+
+    <h3>6.2 Xenon Transient Recognition</h3>
+
+    <table class="wikitable">
+        <tr>
+            <th>Condition</th>
+            <th>Xenon Status</th>
+            <th>Reactivity Effect</th>
+            <th>Operator Response</th>
+        </tr>
+        <tr>
+            <td>Power Reduction</td>
+            <td>135Xe building up</td>
+            <td>Negative reactivity increasing</td>
+            <td>Anticipate need for rod withdrawal</td>
+        </tr>
+        <tr>
+            <td>Post-Shutdown</td>
+            <td><cite index="21-1">Peak in 1-2 days</cite></td>
+            <td>Reactor cannot restart</td>
+            <td>Wait for decay (~3 days)</td>
+        </tr>
+        <tr>
+            <td>Power Increase</td>
+            <td>135Xe burning out</td>
+            <td>Positive reactivity adding</td>
+            <td>Insert rods to compensate</td>
+        </tr>
+        <tr>
+            <td>Flux Oscillation</td>
+            <td><cite index="21-24">Period ~15 hours</cite></td>
+            <td><cite index="21-26">Local power ×3 variation</cite></td>
+            <td>Adjust rod pattern for symmetry</td>
+        </tr>
+    </table>
+
+    <h3>6.3 Prevention of Xenon-Related Instabilities</h3>
+
+    <div class="danger-box">
+        <strong> CHERNOBYL LESSON:</strong> <cite index="21-6,21-7,21-8,21-9,21-10,21-11">The Chernobyl disaster occurred after recovering Reactor 4 from a nonuniformly poisoned state. Power plummeted due to 135Xe accumulation at low power. Operators withdrew most control rods attempting to bring power back up. These actions put the reactor in a state exposed to a feedback loop of neutron power and steam production</cite>.
+    </div>
+
+    <h4>Critical Operating Restrictions:</h4>
+    <ul>
+        <li><strong>NEVER</strong> operate below 700 MW thermal for extended periods</li>
+        <li><strong>NEVER</strong> violate <cite index="22-10">minimum ORM of 15 rods</cite></li>
+        <li><strong>NEVER</strong> attempt rapid power recovery after xenon poisoning</li>
+        <li><strong>ALWAYS</strong> maintain symmetric flux distribution</li>
+        <li><strong>ALWAYS</strong> consider xenon effects in power maneuvers</li>
+    </ul>
+
+    <h2>7. Graphite Fire Response</h2>
+
+    <h3>7.1 Graphite Stack Protection</h3>
+
+    <p><cite index="12-6">The graphite stack is kept in a helium-nitrogen mixture, providing an inert atmosphere for the graphite, protecting it from potential fires</cite>. <cite index="12-9">Maximum allowed temperature of the graphite is up to 730°C</cite>.</p>
+
+    <h3>7.2 Graphite Fire Prevention and Response</h3>
+
+    <div class="warning-box">
+        <strong> WARNING:</strong> Direct water application to hot graphite can cause steam explosions and hydrogen generation. Use inert gas injection as primary suppression method.
+    </div>
+
+    <table class="wikitable">
+        <tr>
+            <th>Temperature Range</th>
+            <th>Condition</th>
+            <th>Required Action</th>
+            <th>Suppression Method</th>
+        </tr>
+        <tr>
+            <td>450-650°C</td>
+            <td>Normal operation</td>
+            <td>Monitor gas composition</td>
+            <td>Maintain He/N₂ atmosphere</td>
+        </tr>
+        <tr>
+            <td>650-700°C</td>
+            <td>Alarm condition</td>
+            <td>Reduce power, increase cooling</td>
+            <td>Increase N₂ injection rate</td>
+        </tr>
+        <tr>
+            <td>700-730°C</td>
+            <td>Maximum limit</td>
+            <td>Immediate power reduction</td>
+            <td>Maximum inert gas flow</td>
+        </tr>
+        <tr>
+            <td>>730°C</td>
+            <td>Fire risk</td>
+            <td>SCRAM + emergency cooling</td>
+            <td>CO₂ injection + N₂ flooding</td>
+        </tr>
+        <tr>
+            <td>>900°C</td>
+            <td>Active fire</td>
+            <td>Evacuate + seal building</td>
+            <td>Total inert gas flooding</td>
+        </tr>
+    </table>
+
+    <h3>7.3 Fire Suppression Procedure</h3>
+
+    <ol>
+        <li><strong>Detection and Confirmation</strong>
+            <ul>
+                <li>High temperature alarms on multiple channels</li>
+                <li>CO/CO₂ detection in gas system</li>
+                <li>Visual confirmation (if accessible)</li>
+            </ul>
+        </li>
+        
+        <li><strong>Immediate Actions</strong>
+            <ul>
+                <li>SCRAM reactor (AZ-5)</li>
+                <li>Maximize inert gas injection</li>
+                <li>Isolate affected zones</li>
+                <li>Evacuate unnecessary personnel</li>
+            </ul>
+        </li>
+        
+        <li><strong>Suppression Strategy</strong>
+            <ul>
+                <li>Primary: Nitrogen/CO₂ injection at >10,000 m³/hr</li>
+                <li>Secondary: Sand/boron mixture if accessible</li>
+                <li>Never use water directly on graphite</li>
+                <li>Cool surrounding structures with water spray</li>
+            </ul>
+        </li>
+    </ol>
+
+    <h2>8. Radiation Emergency Response</h2>
+
+    <h3>8.1 Radiological Release Categories</h3>
+
+    <table class="wikitable">
+        <tr>
+            <th>Category</th>
+            <th>Release Rate</th>
+            <th>Duration</th>
+            <th>Protection Actions</th>
+        </tr>
+        <tr>
+            <td><strong>Minor</strong></td>
+            <td><1 GBq/hr</td>
+            <td><1 hour</td>
+            <td>Normal ventilation, monitor stack</td>
+        </tr>
+        <tr>
+            <td><strong>Moderate</strong></td>
+            <td>1-100 GBq/hr</td>
+            <td>1-24 hours</td>
+            <td>Isolate ventilation, shelter on-site</td>
+        </tr>
+        <tr>
+            <td><strong>Major</strong></td>
+            <td>100 GBq-1 TBq/hr</td>
+            <td>>24 hours</td>
+            <td>Evacuate non-essential, alert public</td>
+        </tr>
+        <tr>
+            <td><strong>Severe</strong></td>
+            <td>>1 TBq/hr</td>
+            <td>Days</td>
+            <td>Site evacuation, public protective actions</td>
+        </tr>
+    </table>
+
+    <h3>8.2 Fuel Damage Assessment</h3>
+
+    <div class="panel-diagram">
+FUEL DAMAGE INDICATORS:
+
+Parameter            Normal        Gap Release    Fuel Melt
+─────────────────────────────────────────────────────────
+Coolant Activity    <1 MBq/L      10-100 MBq/L   >1 GBq/L
+Noble Gas (Xe/Kr)   Background    100× normal    1000× normal
+Iodine-131         <0.1 MBq/m³    1-10 MBq/m³    >100 MBq/m³
+Cesium-137         Background     Detected       High levels
+Dose Rate (Hall)   <1 mSv/hr      10-100 mSv/hr  >1 Sv/hr
+H₂ Production      <0.1%          1-4%           >4%
+    </div>
+
+    <h2>9. Turbine Trip Response</h2>
+
+    <h3>9.1 Turbine Trip Without Reactor Trip</h3>
+
+    <p>Due to online refueling capability, RBMK reactors can continue operation with one turbine offline:</p>
+
+    <ol>
+        <li><strong>Automatic Actions (0-10 seconds)</strong>
+            <ul>
+                <li>Turbine stop valves close</li>
+                <li>Generator breaker opens</li>
+                <li>Bypass valves open to condenser</li>
+                <li>Power reduction to 50% (if single turbine)</li>
+            </ul>
+        </li>
+        
+        <li><strong>Operator Actions</strong>
+            <ul>
+                <li>Verify bypass valve operation</li>
+                <li>Reduce reactor power to match steam demand</li>
+                <li>Monitor drum separator levels</li>
+                <li>Adjust feedwater flow</li>
+            </ul>
+        </li>
+        
+        <li><strong>Stabilization (10-30 minutes)</strong>
+            <ul>
+                <li>Establish steady-state at reduced power</li>
+                <li>Balance steam production and removal</li>
+                <li>Monitor for xenon transients</li>
+                <li>Prepare for turbine restart or continued operation</li>
+            </ul>
+        </li>
+    </ol>
+
+    <h2>10. Communication Protocols</h2>
+
+    <h3>10.1 Emergency Communication Hierarchy</h3>
+
+    <table class="wikitable">
+        <tr>
+            <th>Time Frame</th>
+            <th>Notification</th>
+            <th>Method</th>
+            <th>Information Required</th>
+        </tr>
+        <tr>
+            <td><strong>Immediate</strong><br>(0-15 min)</td>
+            <td>• Control room crew<br>• Shift supervisor<br>• Plant security</td>
+            <td>Plant intercom/alarm</td>
+            <td>Type of emergency, immediate actions taken</td>
+        </tr>
+        <tr>
+            <td><strong>15 minutes</strong></td>
+            <td>• Plant manager<br>• Emergency director<br>• Medical team</td>
+            <td>Emergency phone</td>
+            <td>Classification level, personnel injuries, systems status</td>
+        </tr>
+        <tr>
+            <td><strong>30 minutes</strong></td>
+            <td>• Regulatory authority<br>• Local government<br>• Corporate management</td>
+            <td>Dedicated hotline</td>
+            <td>Event description, radiological status, prognosis</td>
+        </tr>
+        <tr>
+            <td><strong>1 hour</strong></td>
+            <td>• Adjacent facilities<br>• Media relations<br>• Off-site support</td>
+            <td>Official channels</td>
+            <td>Public safety info, protective action recommendations</td>
+        </tr>
+    </table>
+
+    <h3>10.2 Emergency Announcement Templates</h3>
+
+    <div class="code-block">
+<strong>REACTOR SCRAM:</strong>
+"Attention all personnel. Reactor scram in progress. 
+AZ-5 initiated at [TIME]. All emergency teams report 
+to stations. This is not a drill."
+
+<strong>EVACUATION:</strong>
+"Attention all personnel. Evacuate [AREA/BUILDING] 
+immediately. Proceed to assembly point [LETTER]. 
+Do not use elevators. Accountability required."
+
+<strong>RADIATION EMERGENCY:</strong>
+"Attention all personnel. High radiation area in 
+[LOCATION]. Evacuate affected areas. HP teams 
+respond. All others shelter in place."
+    </div>
+
+    <h2>Appendices</h2>
+
+    <h3>A. Quick Reference Cards</h3>
+
+    <h4>SCRAM Criteria Quick Reference</h4>
+    <div class="danger-box">
+        <strong>IMMEDIATE SCRAM REQUIRED:</strong><br>
+        • Reactor period <10 seconds<br>
+        • <cite index="22-10">ORM <15 rods</cite><br>
+        • Uncontrolled power increase >10%/minute<br>
+        • Multiple control rod failures<br>
+        • Loss of >50% cooling capacity<br>
+        • Seismic event felt or >0.1g<br>
+        • Complete loss of power<br>
+        • Fire in reactor building<br>
+        • Security threat<br>
+        • Operator judgment of unsafe condition
+    </div>
+
+    <h3>B. Post-Accident Modifications Summary</h3>
+
+    <p>Following the 1986 Chernobyl accident, significant modifications were made to all RBMK reactors:</p>
+
+    <ul>
+        <li><strong>Control Rod Redesign:</strong> <cite index="12-2,12-3,12-4">The largest updates fixed the RBMK control rod design. The control rods have 4.5-metre graphite displacers, which prevent coolant water from entering the space vacated as rods are withdrawn. Displacers being shorter than core height left 1.25-metre columns of water when fully extracted</cite></li>
+        <li><strong>Faster SCRAM:</strong> <cite index="4-1">AZ-5 sequence reduced from 18 to 12 seconds</cite></li>
+        <li><strong>BAZ System:</strong> <cite index="4-2">Addition of BAZ system with 24 uniformly distributed rods inserting within 1.8 to 2.5 seconds</cite></li>
+        <li><strong>Operating Restrictions:</strong> Minimum power increased to 700 MW thermal</li>
+        <li><strong>ORM Requirements:</strong> Strict enforcement of <cite index="22-10">15 rod minimum</cite></li>
+        <li><strong>Void Coefficient:</strong> Reduced through fuel enrichment changes</li>
+    </ul>
+
+    <h3>C. Emergency Equipment Locations</h3>
+
+    <table class="wikitable">
+        <tr>
+            <th>Equipment</th>
+            <th>Location</th>
+            <th>Quantity</th>
+            <th>Testing Frequency</th>
+        </tr>
+        <tr>
+            <td>AZ-5 Button</td>
+            <td>Main control panel, center</td>
+            <td>1 primary + 1 backup</td>
+            <td>Monthly functional test</td>
+        </tr>
+        <tr>
+            <td>BAZ Controls</td>
+            <td>Emergency panel</td>
+            <td>1 per unit</td>
+            <td>Quarterly</td>
+        </tr>
+        <tr>
+            <td>Emergency Diesels</td>
+            <td>Diesel building</td>
+            <td>3 per unit</td>
+            <td>Monthly start, annual load</td>
+        </tr>
+        <tr>
+            <td>KI Tablets</td>
+            <td>Control room, HP office</td>
+            <td>500 doses</td>
+            <td>Annual inventory</td>
+        </tr>
+        <tr>
+            <td>Emergency Phones</td>
+            <td>All control stations</td>
+            <td>20+ locations</td>
+            <td>Weekly test</td>
+        </tr>
+        <tr>
+            <td>Radiation Suits</td>
+            <td>HP equipment room</td>
+            <td>50 sets</td>
+            <td>Quarterly inspection</td>
+        </tr>
+    </table>
+
+    <h3>D. Training Requirements</h3>
+
+    <h4>Emergency Procedure Qualification</h4>
+    <ul>
+        <li><strong>Initial Training:</strong> 200 hours classroom + 100 hours simulator</li>
+        <li><strong>Annual Requalification:</strong> 40 hours including all emergency scenarios</li>
+        <li><strong>Emergency Drills:</strong> Monthly table-top, quarterly simulator, annual integrated</li>
+        <li><strong>Specific Requirements:</strong>
+            <ul>
+                <li>AZ-5 operation: Demonstrated quarterly</li>
+                <li>LOCA response: Semi-annual evaluation</li>
+                <li>Station blackout: Annual full-scale drill</li>
+                <li>Severe accident management: Annual training</li>
+            </ul>
+        </li>
+    </ul>
+
+    <h3>References</h3>
+    
+    <ul>
+        <li>INSAG-7: "The Chernobyl Accident: Updating of INSAG-1" (1992)</li>
+        <li>IAEA-TECDOC-1489: "Management of Severe Accidents in RBMK" (2006)</li>
+        <li>Regulatory Document: "RBMK Safety Review" Post-Chernobyl Modifications (1996)</li>
+        <li>USSR State Committee: "Report on Chernobyl Accident Causes" (1986)</li>
+        <li>Lithuanian Energy Institute: "Ignalina NPP Safety Analysis" (2004)</li>
+    </ul>
+
+    <h2>See Also</h2>
+    
+    <ul>
+        <li><a href="maintenance-manual.html">← RBMK Maintenance Procedures</a></li>
+        <li><a href="index.html">RBMK Unit 3 Main Page</a></li>
+        <li><a href="control-systems.html">Control Systems Manual</a></li>
+        <li><a href="https://en.wikipedia.org/wiki/RBMK">RBMK Reactor Design</a></li>
+        <li><a href="https://en.wikipedia.org/wiki/Chernobyl_disaster">Chernobyl Disaster</a></li>
+        <li><a href="radiation-protection.html">Radiation Protection Guidelines</a></li>
+    </ul>
+
+    <div class="warning-box" style="margin-top: 3em;">
+        <strong> Disclaimer:</strong> This manual is for educational and historical reference purposes only. It should not be used for actual reactor operations. Emergency procedures must be facility-specific and approved by regulatory authorities. The information presented is based on publicly available documentation and post-Chernobyl safety improvements. Always refer to current, approved procedures and regulations for actual nuclear facility operations.
+    </div>
+
+</div>
+
+<!-- Lightbox overlay -->
+<div class="lightbox-overlay" id="lightbox">
+    <div class="lightbox-content">
+        <span class="lightbox-close" id="lightbox-close">&times;</span>
+        <img id="lightbox-img" src="" alt="">
+    </div>
+</div>
+
+<script>
+    // Lightbox functionality
+    const images = document.querySelectorAll('.lightbox');
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    const lightboxClose = document.getElementById('lightbox-close');
+
+    images.forEach(img => {
+        img.addEventListener('click', function() {
+            lightboxImg.src = this.src;
+            lightboxImg.alt = this.alt;
+            lightbox.classList.add('show');
+        });
+    });
+
+    lightboxClose.addEventListener('click', function() {
+        lightbox.classList.remove('show');
+    });
+    
+    lightbox.addEventListener('click', function(e) {
+        if (e.target === lightbox) {
+            lightbox.classList.remove('show');
+        }
+    });
+
+    // Interactive checkbox functionality
+    document.querySelectorAll('.checklist input[type="checkbox"]').forEach(checkbox => {
+        checkbox.addEventListener('change', function() {
+            if (this.checked) {
+                this.parentElement.style.textDecoration = 'line-through';
+                this.parentElement.style.opacity = '0.6';
+            } else {
+                this.parentElement.style.textDecoration = 'none';
+                this.parentElement.style.opacity = '1';
+            }
+        });
+    });
+
+    // Emergency button animation
+    document.querySelectorAll('.scram-button').forEach(button => {
+        button.addEventListener('mouseover', function() {
+            this.style.transform = 'scale(1.1)';
+            this.style.boxShadow = '0 6px 12px rgba(0,0,0,0.5)';
+        });
+        button.addEventListener('mouseout', function() {
+            this.style.transform = 'scale(1)';
+            this.style.boxShadow = '0 4px 6px rgba(0,0,0,0.3)';
+        });
+    });
+
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
+</script>
+</body>
+</html>
